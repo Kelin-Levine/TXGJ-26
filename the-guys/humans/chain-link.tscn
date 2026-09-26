@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://deech6nqsx2xg"]
+
+[ext_resource type="Script" uid="uid://bup2wqgjgeyes" path="res://the-guys/humans/chain-link.gd" id="1_45d4k"]
+[ext_resource type="Texture2D" uid="uid://ddcrtdxs1udp" path="res://the-guys/humans/red jimmy.png" id="2_cx61m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iq3i0"]
+size = Vector2(24, 48)
+
+[node name="ChainLink" type="RigidBody2D" unique_id=1305890295]
+collision_layer = 4
+collision_mask = 7
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("1_45d4k")
+metadata/_custom_type_script = "uid://bup2wqgjgeyes"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1236399737]
+shape = SubResource("RectangleShape2D_iq3i0")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1612099943]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("2_cx61m")

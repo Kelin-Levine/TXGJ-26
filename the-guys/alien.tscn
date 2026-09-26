@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://8j0wjs3glr3a" path="res://the-guys/alien.gd" id="1_4fn6d"]
 [ext_resource type="Texture2D" uid="uid://bv4n0veyio1ai" path="res://the-guys/green neil.png" id="1_lwe2y"]
+[ext_resource type="PackedScene" uid="uid://b3u64j5n081ax" path="res://the-guys/humans/chain.tscn" id="2_s5vku"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4fn6d"]
 
@@ -23,7 +24,7 @@ b = Vector2(30, 0)
 
 [node name="green neil" type="RigidBody2D" unique_id=2122505308]
 collision_layer = 2
-collision_mask = 3
+collision_mask = 7
 physics_material_override = SubResource("PhysicsMaterial_4fn6d")
 can_sleep = false
 lock_rotation = true
@@ -32,6 +33,7 @@ script = ExtResource("1_4fn6d")
 ground_move_power = SubResource("Curve_4fn6d")
 air_move_power = SubResource("Curve_s5vku")
 jump_power = 700.0
+chain_scene = ExtResource("2_s5vku")
 metadata/_custom_type_script = "uid://8j0wjs3glr3a"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442710145]
@@ -46,4 +48,4 @@ position = Vector2(-15, 32)
 shape = SubResource("SegmentShape2D_ivqea")
 target_position = Vector2(0, 0)
 max_results = 1
-collision_mask = 3
+collision_mask = 7

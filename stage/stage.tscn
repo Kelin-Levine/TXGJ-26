@@ -2,6 +2,8 @@
 
 [ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_a8nle"]
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_v3mmb"]
+[ext_resource type="PackedScene" uid="uid://b3u64j5n081ax" path="res://the-guys/humans/chain.tscn" id="3_nusa8"]
+[ext_resource type="PackedScene" uid="uid://deech6nqsx2xg" path="res://the-guys/humans/chain-link.tscn" id="4_s88my"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
@@ -16,7 +18,7 @@ shape = SubResource("WorldBoundaryShape2D_ivqea")
 polygon = PackedVector2Array(-200, 0, 200, 0, 0, 100)
 uv = PackedVector2Array(3.428711, -1.428566, 255.42871, -7.142853, 120.00012, 61.999992)
 
-[node name="green neil" parent="." unique_id=1081616044 instance=ExtResource("1_a8nle")]
+[node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_a8nle")]
 position = Vector2(0, -132)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1389205491]
@@ -29,3 +31,10 @@ script = ExtResource("2_v3mmb")
 target = NodePath("../../green neil")
 rate = 1.5
 metadata/_custom_type_script = "uid://ve47y5q6sga5"
+
+[node name="Chain" parent="." unique_id=2127978269 instance=ExtResource("3_nusa8")]
+position = Vector2(151, -138)
+rotation = -3.6895986
+
+[node name="ChainLink" parent="." unique_id=1288348938 instance=ExtResource("4_s88my")]
+position = Vector2(-110, -88)

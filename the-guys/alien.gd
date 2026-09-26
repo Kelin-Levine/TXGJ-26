@@ -1,9 +1,11 @@
 class_name Alien
-extends RigidBody2D
+extends RapierRigidBody2D
 
 @export var ground_move_power: Curve
 @export var air_move_power: Curve
 @export var jump_power: float
+
+@export var chain_scene: PackedScene
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var ground_test: ShapeCast2D = $GroundTest
@@ -34,4 +36,17 @@ func _physics_process(delta: float) -> void:
 	apply_central_force(Vector2(move_sample, 0.0))
 
 	if jump and ground_test.is_colliding():
-		apply_impulse(Vector2(0.0, -jump_power))
+		var power := jump_power
+		var collision = ground_test.get_collider(0)
+		if collision is RigidBody2D:
+			power /= 2  # comment for funny
+			collision.apply_impulse(Vector2(0.0, power), ground_test.get_collision_point(0))
+		apply_impulse(Vector2(0.0, -power))
+	
+	if action_mouse:
+		#get_local_mouse_position()
+		#print(get_viewport().get_mouse_position())
+		#print(get_global_mouse_position())
+		var chain: Node2D = chain_scene.instantiate()
+		chain.global_position = get_global_mouse_position()
+		get_parent().add_child(chain)
