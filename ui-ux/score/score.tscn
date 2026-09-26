@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://ooxa3ja1wk57"]
+
+[ext_resource type="PackedScene" uid="uid://btmb7g8g02hfp" path="res://score/score_ticker.tscn" id="1_q4twa"]
+
+[node name="Score" type="Control" unique_id=498851118]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Node" parent="." unique_id=27852303 instance=ExtResource("1_q4twa")]
