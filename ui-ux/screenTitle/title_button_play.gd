@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _buttton_pressed() -> void:
-	print("play button pressed") # debug code
+	# print("play button pressed") # debug code
 	change_scene()
 
 func change_scene() -> void:

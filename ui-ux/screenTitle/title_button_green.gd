@@ -12,7 +12,7 @@ func _process(_delta: float) -> void:
 	pass
 
 func _buttton_pressed() -> void:
-	print("green button pressed") # debug code
+	# print("green button pressed") # debug code
 	greenify()
 
 func greenify() -> void:
