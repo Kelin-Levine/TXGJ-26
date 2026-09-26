@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://fdewpusqdf4t"]
+
+[ext_resource type="Script" uid="uid://df7de11gs131h" path="res://example/rando_number.gd" id="1_ryhfa"]
+
+[node name="RandoNumber" type="Label" unique_id=1365332831]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "placeholder"
+script = ExtResource("1_ryhfa")
+metadata/_custom_type_script = "uid://df7de11gs131h"
+
+[node name="Timer" type="Timer" parent="." unique_id=848845439]
+autostart = true

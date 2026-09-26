@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://bfpcpp8ysqflb"]
+
+[ext_resource type="Script" uid="uid://8j0wjs3glr3a" path="res://the-guys/alien.gd" id="1_4fn6d"]
+[ext_resource type="Texture2D" uid="uid://bv4n0veyio1ai" path="res://the-guys/green neil.png" id="1_lwe2y"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4fn6d"]
+
+[sub_resource type="Curve" id="Curve_4fn6d"]
+_limits = [1000.0, 2500.0, 0.0, 500.0]
+_data = [Vector2(0, 2500), 0.0, 0.0, 0, 0, Vector2(500, 1000), -9.234236, -4.7877684, 0, 0]
+point_count = 2
+
+[sub_resource type="Curve" id="Curve_s5vku"]
+_limits = [0.0, 1300.0, 0.0, 500.0]
+_data = [Vector2(0, 1300), 0.0, 0.0, 0, 0, Vector2(500, 0), -8.171674, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivqea"]
+size = Vector2(30, 62)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_ivqea"]
+b = Vector2(30, 0)
+
+[node name="green neil" type="RigidBody2D" unique_id=2122505308]
+collision_layer = 2
+collision_mask = 3
+physics_material_override = SubResource("PhysicsMaterial_4fn6d")
+can_sleep = false
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_4fn6d")
+ground_move_power = SubResource("Curve_4fn6d")
+air_move_power = SubResource("Curve_s5vku")
+jump_power = 700.0
+metadata/_custom_type_script = "uid://8j0wjs3glr3a"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442710145]
+shape = SubResource("RectangleShape2D_ivqea")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1057737969]
+texture_filter = 1
+texture = ExtResource("1_lwe2y")
+
+[node name="GroundTest" type="ShapeCast2D" parent="." unique_id=1501266122]
+position = Vector2(-15, 32)
+shape = SubResource("SegmentShape2D_ivqea")
+target_position = Vector2(0, 0)
+max_results = 1
+collision_mask = 3

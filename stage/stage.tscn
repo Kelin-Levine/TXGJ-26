@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://btnnosrkicu15"]
+
+[ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_a8nle"]
+[ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_v3mmb"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
+
+[node name="Stage" type="Node" unique_id=1262384612]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=561098461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=809477260]
+shape = SubResource("WorldBoundaryShape2D_ivqea")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=898132365]
+polygon = PackedVector2Array(-200, 0, 200, 0, 0, 100)
+uv = PackedVector2Array(3.428711, -1.428566, 255.42871, -7.142853, 120.00012, 61.999992)
+
+[node name="green neil" parent="." unique_id=1081616044 instance=ExtResource("1_a8nle")]
+position = Vector2(0, -132)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1389205491]
+offset = Vector2(0, -100)
+zoom = Vector2(0.6, 0.6)
+limit_enabled = false
+
+[node name="Chaseify" type="Node" parent="Camera2D" unique_id=710258624 node_paths=PackedStringArray("target")]
+script = ExtResource("2_v3mmb")
+target = NodePath("../../green neil")
+rate = 1.5
+metadata/_custom_type_script = "uid://ve47y5q6sga5"
