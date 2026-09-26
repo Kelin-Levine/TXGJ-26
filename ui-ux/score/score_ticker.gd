@@ -7,7 +7,7 @@ func _ready() -> void:
 	score = 0 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func add_score(deltaScore: int) -> void:
