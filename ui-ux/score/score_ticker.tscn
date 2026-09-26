@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://btmb7g8g02hfp"]
+
+[ext_resource type="Script" uid="uid://bamag5yxa3y4p" path="res://ui-ux/score/score_display_margin.gd" id="1_a1olr"]
+[ext_resource type="Script" uid="uid://br6p4qb4d8yba" path="res://ui-ux/score/score_display.gd" id="2_ss68c"]
+
+[node name="ScoreTicker" type="CanvasLayer" unique_id=839163037]
+
+[node name="ScoreDisplayMargin" type="MarginContainer" parent="." unique_id=993479863]
+top_level = true
+z_index = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -40.0
+offset_bottom = 40.0
+grow_horizontal = 0
+script = ExtResource("1_a1olr")
+metadata/_custom_type_script = "uid://bamag5yxa3y4p"
+
+[node name="ScoreDisplay" type="Label" parent="ScoreDisplayMargin" unique_id=147499087]
+show_behind_parent = true
+layout_mode = 2
+horizontal_alignment = 2
+script = ExtResource("2_ss68c")
+metadata/_custom_type_script = "uid://br6p4qb4d8yba"
