@@ -1,12 +1,20 @@
 class_name TitleButtonSettings
-extends TitleButton
+extends Button
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	text = "SETTINGS"
+	pressed.connect(_buttton_pressed)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+	pass
+
+func _buttton_pressed() -> void:
+	print("settings button pressed") # debug code
+	change_scene()
+
+func change_scene() -> void:
 	pass

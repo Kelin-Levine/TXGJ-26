@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://cwpmf1ey4mbyi"]
+
+[ext_resource type="PackedScene" uid="uid://b4ahsqmd3t4si" path="res://ui-ux/screenTitle/title.tscn" id="1_20pps"]
+[ext_resource type="PackedScene" uid="uid://btnnosrkicu15" path="res://stage/stage.tscn" id="2_f1ywe"]
+
+[node name="title_page" type="Node" unique_id=527599651]
+
+[node name="Title" parent="." unique_id=1364772156 instance=ExtResource("1_20pps")]
+game = ExtResource("2_f1ywe")

@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="TXGJ-26"
-run/main_scene="uid://btnnosrkicu15"
+run/main_scene="uid://cwpmf1ey4mbyi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 
