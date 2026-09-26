@@ -4,7 +4,7 @@
 [ext_resource type="Script" uid="uid://bmahsml41vur5" path="res://ui-ux/screenTitle/title_display.gd" id="1_bmrs4"]
 [ext_resource type="Script" uid="uid://mxvuimjqi473" path="res://ui-ux/screenTitle/title_button_quit.gd" id="3_mso1k"]
 [ext_resource type="Script" uid="uid://cw3tv8nn8k6my" path="res://ui-ux/screenTitle/title_button_play.gd" id="3_vc2kx"]
-[ext_resource type="Script" uid="uid://ch12bmmgi8oot" path="res://ui-ux/screenTitle/title_button_settings.gd" id="4_x2ro4"]
+[ext_resource type="Script" uid="uid://ch12bmmgi8oot" path="res://ui-ux/screenTitle/title_button_green.gd" id="4_x2ro4"]
 
 [node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("button")]
 layout_mode = 3
@@ -50,7 +50,7 @@ layout_mode = 2
 script = ExtResource("3_vc2kx")
 metadata/_custom_type_script = "uid://cw3tv8nn8k6my"
 
-[node name="TitleButtonSettings" type="Button" parent="CenterContainer/BoxContainer/BoxContainer" unique_id=2122786127]
+[node name="TitleButtonGreen" type="Button" parent="CenterContainer/BoxContainer/BoxContainer" unique_id=2122786127]
 layout_mode = 2
 script = ExtResource("4_x2ro4")
 metadata/_custom_type_script = "uid://ch12bmmgi8oot"

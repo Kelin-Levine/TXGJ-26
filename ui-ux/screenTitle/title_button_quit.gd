@@ -14,7 +14,4 @@ func _process(_delta: float) -> void:
 
 func _buttton_pressed() -> void:
 	print("quit button pressed") # debug code
-	change_scene()
-
-func change_scene() -> void:
-	pass
+	get_tree().quit()

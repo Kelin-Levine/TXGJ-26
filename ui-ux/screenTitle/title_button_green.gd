@@ -1,10 +1,9 @@
 class_name TitleButtonSettings
 extends Button
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "SETTINGS"
+	text = "GREEN"
 	pressed.connect(_buttton_pressed)
 
 
@@ -13,8 +12,8 @@ func _process(_delta: float) -> void:
 	pass
 
 func _buttton_pressed() -> void:
-	print("settings button pressed") # debug code
-	change_scene()
+	print("green button pressed") # debug code
+	greenify()
 
-func change_scene() -> void:
-	pass
+func greenify() -> void:
+	Greenify.visible = !Greenify.visible

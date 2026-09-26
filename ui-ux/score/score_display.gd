@@ -5,6 +5,7 @@ extends Label
 func _ready() -> void:
 	set_text("Score:")	
 
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	set_text(" Score:\n" + (str) (ScoreTicker.score))
