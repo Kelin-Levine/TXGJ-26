@@ -1,11 +1,31 @@
 [gd_scene format=3 uid="uid://whrjm4vcpxg1"]
 
+[ext_resource type="Script" uid="uid://dqgavvvpylnqh" path="res://isotope/isotope.gd" id="1_2f6fj"]
 [ext_resource type="Texture2D" uid="uid://cac3ywfw4i1ka" path="res://isotope/tempIsotope.png" id="1_8o56m"]
 [ext_resource type="Script" uid="uid://bf6xvdv1hsss" path="res://isotope/isotope_arrow.gd" id="1_tlbjn"]
 [ext_resource type="Texture2D" uid="uid://bnn17u3hi27jc" path="res://isotope/tempArrow.png" id="2_2f6fj"]
+[ext_resource type="Texture2D" uid="uid://gg6km8fa77wb" path="res://icon.svg" id="5_t3qm6"]
 
-[node name="Isotope" type="Node2D" unique_id=1068156353]
+[sub_resource type="CircleShape2D" id="CircleShape2D_ivqea"]
+radius = 40.0
+
+[node name="Isotope" type="RigidBody2D" unique_id=1743771294]
 z_index = 2
+collision_layer = 8
+collision_mask = 48
+mass = 0.5
+can_sleep = false
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 32
+script = ExtResource("1_2f6fj")
+max_velocity = 50.0
+warn_color = Color(1, 0, 0, 0.23921569)
+lose_color = Color(1, 1, 1, 1)
+metadata/_custom_type_script = "uid://dqgavvvpylnqh"
+
+[node name="CollisionShape" type="CollisionShape2D" parent="." unique_id=441301808]
+shape = SubResource("CircleShape2D_ivqea")
 
 [node name="tempIgnore" type="Polygon2D" parent="." unique_id=582342186]
 visible = false
@@ -21,3 +41,46 @@ texture = ExtResource("1_8o56m")
 texture = ExtResource("2_2f6fj")
 script = ExtResource("1_tlbjn")
 metadata/_custom_type_script = "uid://bf6xvdv1hsss"
+
+[node name="WarningCanvas" type="CanvasLayer" parent="." unique_id=794102715]
+layer = 10
+visible = false
+
+[node name="WarningColor" type="ColorRect" parent="WarningCanvas" unique_id=1125831810]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LoseScreen" type="Control" parent="WarningCanvas" unique_id=1181030285]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect" type="ColorRect" parent="WarningCanvas/LoseScreen" unique_id=1269619840]
+propagate_maximum_size = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="TextureRect" type="TextureRect" parent="WarningCanvas/LoseScreen" unique_id=1451674919]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_t3qm6")
+stretch_mode = 5

@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://dpb2vcem3qdhh" path="res://the-guys/humans/crowd.tscn" id="3_xmdu3"]
 [ext_resource type="PackedScene" uid="uid://em2nhvm2tiv1" path="res://stage/double-pendulum.tscn" id="4_6k7cv"]
 [ext_resource type="PackedScene" uid="uid://bu0m7iwhs340d" path="res://stage/platform.tscn" id="5_au0sk"]
+[ext_resource type="Script" uid="uid://o3gnq3y7st5l" path="res://isotope/isotope-destroyer.gd" id="5_h4sia"]
 [ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_q6r1r"]
 [ext_resource type="PackedScene" uid="uid://cx1kmdxbxqx08" path="res://stage/wall.tscn" id="6_u7g2e"]
 
@@ -38,14 +39,18 @@ rate = 1.5
 metadata/_custom_type_script = "uid://ve47y5q6sga5"
 
 [node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_q6r1r")]
-position = Vector2(0, 211)
+position = Vector2(0, -221)
+smack_height = -1400.0
 
 [node name="Bounding Walls" type="Node2D" parent="." unique_id=612395591]
 z_index = 5
 scale = Vector2(0.8, 0.8)
 
-[node name="Ground" type="StaticBody2D" parent="Bounding Walls" unique_id=2112069460]
-position = Vector2(0, 1000)
+[node name="Ground" type="StaticBody2D" parent="Bounding Walls" unique_id=2102831941]
+position = Vector2(0, 1001.2501)
+collision_layer = 33
+script = ExtResource("5_h4sia")
+metadata/_custom_type_script = "uid://o3gnq3y7st5l"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Walls/Ground" unique_id=179982934]
 shape = SubResource("WorldBoundaryShape2D_ivqea")
@@ -58,6 +63,7 @@ uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 
 [node name="Ceiling" type="StaticBody2D" parent="Bounding Walls" unique_id=1882766047]
 position = Vector2(0, -2000)
 rotation = -3.1415925
+collision_layer = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Walls/Ceiling" unique_id=889979723]
 shape = SubResource("WorldBoundaryShape2D_ivqea")
@@ -70,6 +76,7 @@ uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 
 [node name="WallLeft" type="StaticBody2D" parent="Bounding Walls" unique_id=1823384933]
 position = Vector2(-3500, 1000)
 rotation = 1.5707964
+collision_layer = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Walls/WallLeft" unique_id=570094272]
 shape = SubResource("WorldBoundaryShape2D_ivqea")
@@ -82,6 +89,7 @@ uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 
 [node name="WallRight" type="StaticBody2D" parent="Bounding Walls" unique_id=861391717]
 position = Vector2(3500, 1000)
 rotation = -1.5707964
+collision_layer = 17
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Walls/WallRight" unique_id=1712943726]
 shape = SubResource("WorldBoundaryShape2D_ivqea")

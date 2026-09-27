@@ -109,6 +109,9 @@ p1_recall={
 2d_physics/layer_1="Stage"
 2d_physics/layer_2="Player"
 2d_physics/layer_3="Chain"
+2d_physics/layer_4="Isotope"
+2d_physics/layer_5="Stage Walls"
+2d_physics/layer_6="Stage Floor"
 
 [physics]
 

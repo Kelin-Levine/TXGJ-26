@@ -28,7 +28,7 @@ size = Vector2(2, 56)
 
 [node name="green neil" type="RigidBody2D" unique_id=2122505308]
 collision_layer = 2
-collision_mask = 7
+collision_mask = 15
 physics_material_override = SubResource("PhysicsMaterial_4fn6d")
 can_sleep = false
 lock_rotation = true
