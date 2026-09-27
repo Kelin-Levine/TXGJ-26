@@ -1,54 +1,14 @@
 [gd_scene format=3 uid="uid://b3u64j5n081ax"]
 
 [ext_resource type="PackedScene" uid="uid://deech6nqsx2xg" path="res://the-guys/humans/chain-link.tscn" id="1_780p0"]
-[ext_resource type="Script" uid="uid://bv2bc4lt5v7hu" path="res://addons/godot-rapier2d/custom_nodes/rapier_pin_joint_2d.gd" id="1_yrwea"]
+[ext_resource type="Script" uid="uid://n747sp6yaaf5" path="res://the-guys/humans/chain.gd" id="1_yrwea"]
 
-[node name="Chain" type="Node2D" unique_id=261810030]
-
-[node name="ChainLink" parent="." unique_id=1288348938 instance=ExtResource("1_780p0")]
-rotation = 0.5235988
-
-[node name="RapierPinJoint2D" type="PinJoint2D" parent="." unique_id=1365059631]
-position = Vector2(7, -13)
-node_a = NodePath("../ChainLink")
-node_b = NodePath("../ChainLink2")
+[node name="Chain" type="Node2D" unique_id=432440422]
 script = ExtResource("1_yrwea")
-metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
-
-[node name="ChainLink2" parent="." unique_id=359421020 instance=ExtResource("1_780p0")]
-position = Vector2(14, 0)
-rotation = 2.6179938
-
-[node name="RapierPinJoint2D2" type="PinJoint2D" parent="." unique_id=1034010080]
-position = Vector2(21, 13)
-node_a = NodePath("../ChainLink2")
-node_b = NodePath("../ChainLink3")
-script = ExtResource("1_yrwea")
-metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
-
-[node name="ChainLink3" parent="." unique_id=536968618 instance=ExtResource("1_780p0")]
-position = Vector2(28, 0)
-rotation = 0.5235988
-
-[node name="RapierPinJoint2D3" type="PinJoint2D" parent="." unique_id=1278569610]
-position = Vector2(35, -13)
-node_a = NodePath("../ChainLink3")
-node_b = NodePath("../ChainLink4")
-script = ExtResource("1_yrwea")
-metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
-
-[node name="ChainLink4" parent="." unique_id=641680136 instance=ExtResource("1_780p0")]
-position = Vector2(42, 0)
-rotation = 2.6179938
-
-[node name="RapierPinJoint2D4" type="PinJoint2D" parent="." unique_id=2052922856]
-position = Vector2(49, 13)
-node_a = NodePath("../ChainLink4")
-node_b = NodePath("../ChainLink5")
-script = ExtResource("1_yrwea")
-metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
-
-[node name="ChainLink5" parent="." unique_id=207684765 instance=ExtResource("1_780p0")]
-position = Vector2(56, 0)
-rotation = 0.5235988
-launch_power = 1000.0
+launch_power = 100.0
+chain_softness = 4.0
+link_width = 15.0
+link_height = 22.7
+link_angle = 72.0
+link_scene = ExtResource("1_780p0")
+metadata/_custom_type_script = "uid://n747sp6yaaf5"

@@ -1,0 +1,94 @@
+[gd_scene format=3 uid="uid://em2nhvm2tiv1"]
+
+[ext_resource type="Script" uid="uid://busd3yfk5p1mx" path="res://addons/godot-rapier2d/custom_nodes/rapier_static_body_2d.gd" id="1_vx2k7"]
+[ext_resource type="Script" uid="uid://unwhnooi7g2c" path="res://addons/godot-rapier2d/custom_nodes/rapier_rigid_body_2d.gd" id="1_xmxan"]
+[ext_resource type="Script" uid="uid://bv2bc4lt5v7hu" path="res://addons/godot-rapier2d/custom_nodes/rapier_pin_joint_2d.gd" id="2_0t0tb"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ivqea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nr0v7"]
+size = Vector2(200, 50)
+
+[node name="DoublePendulum" type="Node2D" unique_id=1747318728]
+
+[node name="Pivot" type="StaticBody2D" parent="." unique_id=437023163]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_vx2k7")
+metadata/_custom_type_script = "uid://busd3yfk5p1mx"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Pivot" unique_id=1910682981]
+shape = SubResource("RectangleShape2D_ivqea")
+
+[node name="Arm1" type="RigidBody2D" parent="." unique_id=368999767]
+position = Vector2(0, 75)
+collision_layer = 0
+collision_mask = 0
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("1_xmxan")
+metadata/_custom_type_script = "uid://unwhnooi7g2c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm1" unique_id=1214478242]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_nr0v7")
+
+[node name="Visual" type="Polygon2D" parent="Arm1" unique_id=1631173460]
+color = Color(0.6039216, 0.6, 0.627451, 1)
+polygon = PackedVector2Array(-25, -100, 25, -100, 25, 100, -25, 100)
+uv = PackedVector2Array(-111.99988, -27.71428, -2.2855835, -38.571426, -5.142761, 14, -119.99988, 19.714287)
+
+[node name="Arm2" type="RigidBody2D" parent="." unique_id=1547380775]
+position = Vector2(0, 250)
+collision_layer = 0
+collision_mask = 0
+can_sleep = false
+continuous_cd = 2
+script = ExtResource("1_xmxan")
+metadata/_custom_type_script = "uid://unwhnooi7g2c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arm2" unique_id=2039137141]
+rotation = 1.5707964
+shape = SubResource("RectangleShape2D_nr0v7")
+
+[node name="Visual" type="Polygon2D" parent="Arm2" unique_id=1374812627]
+color = Color(0.6039216, 0.6, 0.627451, 1)
+polygon = PackedVector2Array(-25, -100, 25, -100, 25, 100, -25, 100)
+uv = PackedVector2Array(-111.99988, -27.71428, -2.2855835, -38.571426, -5.142761, 14, -119.99988, 19.714287)
+
+[node name="Platform" type="RigidBody2D" parent="." unique_id=906569062]
+position = Vector2(0, 325)
+can_sleep = false
+lock_rotation = true
+continuous_cd = 2
+script = ExtResource("1_xmxan")
+metadata/_custom_type_script = "uid://unwhnooi7g2c"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=1043578731]
+shape = SubResource("RectangleShape2D_nr0v7")
+
+[node name="Visual" type="Polygon2D" parent="Platform" unique_id=1032329656]
+rotation = 1.5707964
+color = Color(0.6039216, 0.6, 0.627451, 1)
+polygon = PackedVector2Array(-25, -100, 25, -100, 25, 100, -25, 100)
+uv = PackedVector2Array(-111.99988, -27.71428, -2.2855835, -38.571426, -5.142761, 14, -119.99988, 19.714287)
+
+[node name="RapierPinJoint2D" type="PinJoint2D" parent="." unique_id=331547993]
+position = Vector2(0, 162.5)
+node_a = NodePath("../Arm1")
+node_b = NodePath("../Arm2")
+script = ExtResource("2_0t0tb")
+metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
+
+[node name="RapierPinJoint2D2" type="PinJoint2D" parent="." unique_id=1372892374]
+position = Vector2(0, 325)
+node_a = NodePath("../Arm2")
+node_b = NodePath("../Platform")
+script = ExtResource("2_0t0tb")
+metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"
+
+[node name="RapierPinJoint2D3" type="PinJoint2D" parent="." unique_id=810171536]
+node_a = NodePath("../Arm1")
+node_b = NodePath("../Pivot")
+script = ExtResource("2_0t0tb")
+metadata/_custom_type_script = "uid://bv2bc4lt5v7hu"

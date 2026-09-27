@@ -1,0 +1,2 @@
+class_name StrayFollower
+extends RapierStaticBody2D

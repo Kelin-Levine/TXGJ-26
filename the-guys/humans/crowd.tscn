@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://dpb2vcem3qdhh"]
 
-[node name="Crowd" type="Node2D" unique_id=1501224817]
+[ext_resource type="Script" uid="uid://c62pbev7d36ge" path="res://the-guys/humans/crowd.gd" id="1_i3b4b"]
+[ext_resource type="PackedScene" uid="uid://dvlmeyx7v1jxo" path="res://the-guys/humans/stray-follower.tscn" id="2_1hxte"]
+
+[node name="Crowd" type="Node2D" unique_id=1052000024]
+script = ExtResource("1_i3b4b")
+stray_follower_scene = ExtResource("2_1hxte")
+metadata/_custom_type_script = "uid://c62pbev7d36ge"
+
+[node name="Visual" type="Polygon2D" parent="." unique_id=1292456738]
+color = Color(0, 1, 0, 0.30588236)
+polygon = PackedVector2Array(-50, -24, 50, -24, 50, 24, -50, 24)
+uv = PackedVector2Array(-111.99988, -27.71428, -2.2855835, -38.571426, -5.142761, 14, -119.99988, 19.714287)

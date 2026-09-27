@@ -1,3 +1,14 @@
 [gd_scene format=3 uid="uid://bxlwucsnkr3wo"]
 
-[node name="Follower" type="Node2D" unique_id=167303]
+[ext_resource type="Texture2D" uid="uid://ddcrtdxs1udp" path="res://the-guys/humans/red jimmy.png" id="1_muf68"]
+[ext_resource type="Script" uid="uid://b8w25p4nc1lam" path="res://the-guys/humans/follower.gd" id="2_4o2dm"]
+
+[node name="Follower" type="Sprite2D" unique_id=328633135]
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("1_muf68")
+script = ExtResource("2_4o2dm")
+min_chase_offset = 10.0
+max_chase_offset = 200.0
+chase_rate = 5.0
+metadata/_custom_type_script = "uid://b8w25p4nc1lam"
