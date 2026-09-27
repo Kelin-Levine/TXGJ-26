@@ -1,0 +1,78 @@
+[gd_scene format=3 uid="uid://btnnosrkicu15"]
+
+[ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_a8nle"]
+[ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_v3mmb"]
+[ext_resource type="PackedScene" uid="uid://dpb2vcem3qdhh" path="res://the-guys/humans/crowd.tscn" id="3_nusa8"]
+[ext_resource type="PackedScene" uid="uid://em2nhvm2tiv1" path="res://stage/double-pendulum.tscn" id="4_s88my"]
+[ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_ve7pq"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_45d4k"]
+size = Vector2(500, 100)
+
+[node name="Stage" type="Node" unique_id=1262384612]
+
+[node name="Ground" type="StaticBody2D" parent="." unique_id=561098461]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground" unique_id=809477260]
+shape = SubResource("WorldBoundaryShape2D_ivqea")
+
+[node name="Polygon2D" type="Polygon2D" parent="Ground" unique_id=898132365]
+polygon = PackedVector2Array(-200, 0, 200, 0, 0, 100)
+uv = PackedVector2Array(3.428711, -1.428566, 255.42871, -7.142853, 120.00012, 61.999992)
+
+[node name="Platform" type="StaticBody2D" parent="." unique_id=1926131732]
+position = Vector2(0, -450)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Platform" unique_id=443580726]
+shape = SubResource("RectangleShape2D_45d4k")
+
+[node name="Polygon2D" type="Polygon2D" parent="Platform" unique_id=2059134694]
+color = Color(0.6466144, 0.64661443, 0.6466144, 1)
+polygon = PackedVector2Array(-250, -50, 250, -50, 250, 50, -250, 50)
+uv = PackedVector2Array(3.428711, -1.428566, 255.42871, -7.142853, 120.00012, 61.999992)
+
+[node name="Wall" type="StaticBody2D" parent="." unique_id=492581245]
+position = Vector2(746, -234)
+rotation = 1.5707964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Wall" unique_id=1532287703]
+shape = SubResource("RectangleShape2D_45d4k")
+
+[node name="Polygon2D" type="Polygon2D" parent="Wall" unique_id=1931100660]
+color = Color(0.6466144, 0.64661443, 0.6466144, 1)
+polygon = PackedVector2Array(-250, -50, 250, -50, 250, 50, -250, 50)
+uv = PackedVector2Array(3.428711, -1.428566, 255.42871, -7.142853, 120.00012, 61.999992)
+
+[node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_a8nle")]
+position = Vector2(0, -132)
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1389205491]
+offset = Vector2(0, -100)
+zoom = Vector2(0.6, 0.6)
+limit_enabled = false
+
+[node name="Chaseify" type="Node" parent="Camera2D" unique_id=710258624 node_paths=PackedStringArray("target")]
+script = ExtResource("2_v3mmb")
+target = NodePath("../../green neil")
+rate = 1.5
+metadata/_custom_type_script = "uid://ve47y5q6sga5"
+
+[node name="Crowd" parent="." unique_id=1052000024 instance=ExtResource("3_nusa8")]
+position = Vector2(-505, -24)
+
+<<<<<<< HEAD
+[node name="Crowd2" parent="." unique_id=1547156958 instance=ExtResource("3_nusa8")]
+position = Vector2(-843, -26)
+
+[node name="Crowd3" parent="." unique_id=703650937 instance=ExtResource("3_nusa8")]
+position = Vector2(106, -525)
+
+[node name="Crowd4" parent="." unique_id=1365758457 instance=ExtResource("3_nusa8")]
+position = Vector2(960, -28)
+
+[node name="DoublePendulum" parent="." unique_id=1747318728 instance=ExtResource("4_s88my")]
+position = Vector2(-538, -525)
+
+[node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_ve7pq")]
