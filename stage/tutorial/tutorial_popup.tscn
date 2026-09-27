@@ -1,0 +1,110 @@
+[gd_scene format=3 uid="uid://bpfgl7dtrl3fy"]
+
+[ext_resource type="Script" uid="uid://yvkrodp1lr8p" path="res://stage/tutorial/tutorialText.gd" id="1_wsutj"]
+
+[node name="tutorialPopup" type="Control" unique_id=1059973690]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_wsutj")
+metadata/_custom_type_script = "uid://yvkrodp1lr8p"
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=658535395]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1443301718]
+layout_mode = 2
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=764938211]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "You are Green Neil, an extraterrestrial 
+here to prevent a reactor meltdown 
+through the only means you know. 
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1833363606]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Prevent Meltdown by ensuring that the 
+rogue isotope does not touch the striped 
+ground!
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1639030897]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Collect and Throw Scientists to enable more
+ varied Movement and keep the 
+rogue isotope in the air!
+"
+horizontal_alignment = 1
+
+[node name="ControlsLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1275279332]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Controls:"
+horizontal_alignment = 1
+
+[node name="ControlsLabel2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1957754809]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "A - Left
+D - Right
+S - Increase Tension
+Space - Jump
+Left Click(hold) - Send Out Chain
+Left Click(release) - Release Chain
+Right Click - Recollect Chain
+Left Click(tap) - Throw Chain
+Left + Right Click - Throw Chain (with vigor)"
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer" unique_id=562392624]
+layout_mode = 2
+
+[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=1469213669]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "                                                                                                                            "
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=420371247]
+layout_mode = 2
+
+[node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=2144901427]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Earn points and boons (or curses) by 
+venturing and processing Terminals. 
+
+Active Terminals are pointed towards 
+by Red Arrows,"
+horizontal_alignment = 1
+
+[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1017359950]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "while the Unstable Isotope is incidated 
+by a Blue Arrow,"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=643982381]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "Survive as long as you can, collect as 
+many points as possible, and, most 
+importantly, have fun!"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=114879947]
+layout_mode = 2
+theme_override_font_sizes/font_size = 24
+text = "The tutorial will disappear if you walk 
+outside of the starting area (indicated
+by glass). "
+horizontal_alignment = 1
