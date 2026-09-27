@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_v3mmb"]
 [ext_resource type="PackedScene" uid="uid://dpb2vcem3qdhh" path="res://the-guys/humans/crowd.tscn" id="3_nusa8"]
 [ext_resource type="PackedScene" uid="uid://em2nhvm2tiv1" path="res://stage/double-pendulum.tscn" id="4_s88my"]
+[ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_ve7pq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
@@ -61,6 +62,7 @@ metadata/_custom_type_script = "uid://ve47y5q6sga5"
 [node name="Crowd" parent="." unique_id=1052000024 instance=ExtResource("3_nusa8")]
 position = Vector2(-505, -24)
 
+<<<<<<< HEAD
 [node name="Crowd2" parent="." unique_id=1547156958 instance=ExtResource("3_nusa8")]
 position = Vector2(-843, -26)
 
@@ -72,3 +74,5 @@ position = Vector2(960, -28)
 
 [node name="DoublePendulum" parent="." unique_id=1747318728 instance=ExtResource("4_s88my")]
 position = Vector2(-538, -525)
+
+[node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_ve7pq")]

@@ -1,7 +1,9 @@
 [gd_scene format=3 uid="uid://bcg600ic5lfgj"]
 
-[node name="ColorRect" type="ColorRect" unique_id=1095956379]
+[node name="CanvasLayer" type="CanvasLayer" unique_id=1613038048]
 visible = false
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1095956379]
 z_index = 500
 anchors_preset = 15
 anchor_right = 1.0
