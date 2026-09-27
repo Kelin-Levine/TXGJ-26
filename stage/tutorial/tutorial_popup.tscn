@@ -1,14 +1,12 @@
 [gd_scene format=3 uid="uid://bpfgl7dtrl3fy"]
 
-[ext_resource type="Script" uid="uid://yvkrodp1lr8p" path="res://stage/tutorial/tutorialText.gd" id="1_wsutj"]
+[ext_resource type="FontFile" uid="uid://byoarw1rnd4cr" path="res://addons/fonts/Iceland/Iceland-Regular.ttf" id="2_3aw6r"]
 
-[node name="tutorialPopup" type="Control" unique_id=1059973690]
+[node name="tutorialPopup" type="Control" unique_id=1453636833]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
-script = ExtResource("1_wsutj")
-metadata/_custom_type_script = "uid://yvkrodp1lr8p"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=658535395]
 layout_mode = 0
@@ -18,93 +16,143 @@ offset_bottom = 40.0
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1443301718]
 layout_mode = 2
 
+[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1469213669]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "                                                                             "
+horizontal_alignment = 1
+
+[node name="Label7" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=835400170]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "                                                                             "
+horizontal_alignment = 1
+
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=764938211]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "You are Green Neil, an extraterrestrial 
-here to prevent a reactor meltdown 
-through the only means you know. 
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "A/D to run, Space to jump!
 "
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1833363606]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Prevent Meltdown by ensuring that the 
-rogue isotope does not touch the striped 
-ground!
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Check the Itch page for 
+gamepad and alternative 
+mouseless keyboard controls.
 "
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1639030897]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Collect and Throw Scientists to enable more
- varied Movement and keep the 
-rogue isotope in the air!
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Left Click and hold to throw 
+a chain! The chain will pull 
+you with it and stick to surfaces.
 "
 horizontal_alignment = 1
 
-[node name="ControlsLabel" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1275279332]
+[node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=2144901427]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Controls:"
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "While holding on to a chain, 
+hold S to pull harder.
+"
 horizontal_alignment = 1
 
-[node name="ControlsLabel2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1957754809]
+[node name="Label8" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1017359950]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "A - Left
-D - Right
-S - Increase Tension
-Space - Jump
-Left Click(hold) - Send Out Chain
-Left Click(release) - Release Chain
-Right Click - Recollect Chain
-Left Click(tap) - Throw Chain
-Left + Right Click - Throw Chain (with vigor)"
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "After throwing a chain, release 
+Left Click to let go. The chain 
+will unstick after a few seconds.
+"
+horizontal_alignment = 1
 
 [node name="VBoxContainer3" type="VBoxContainer" parent="HBoxContainer" unique_id=562392624]
 layout_mode = 2
 
-[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=1469213669]
+[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=1817748837]
+layout_mode = 2
+text = "                                                                                           "
+
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=39319675]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "                                                                                                            "
+text = "
+
+
+
+
+Touch the above terminal to 
+begin the game!"
 horizontal_alignment = 1
 
 [node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer" unique_id=420371247]
 layout_mode = 2
 
-[node name="Label5" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=2144901427]
+[node name="Label8" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1005414882]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Earn points and boons (or curses) by 
-venturing and processing Terminals. 
-
-Active Terminals are pointed towards 
-by Red Arrows,"
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "                                                                             "
 horizontal_alignment = 1
 
-[node name="Label6" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1017359950]
+[node name="Label9" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1399624337]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "while the Unstable Isotope is incidated 
-by a Blue Arrow,"
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "                                                                             "
 horizontal_alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=643982381]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "Survive as long as you can, collect as 
-many points as possible, and, most 
-importantly, have fun!
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Dropped chains can still hit the
+ isotope! They can also be stood 
+on as platforms.
 "
 horizontal_alignment = 1
 
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=114879947]
 layout_mode = 2
-theme_override_font_sizes/font_size = 20
-text = "This  tutorial will disappear when you
-activate the terminal above you."
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Collect scientists around the 
+lab to use as chains!
+
+Hold Right Click while touching 
+dropped chains to recover scientists.
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=884849614]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Activate computer terminals 
+(blue(?) arrows) for points and 
+upgrades! Get as many points 
+as you can!
+"
+horizontal_alignment = 1
+
+[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=478705393]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Keep the unstable isotope (red(?)
+ arrow) in the air by hitting it with 
+yourself or your chains. If it touches
+ the bottom of the lab, everyone dies!
+"
 horizontal_alignment = 1

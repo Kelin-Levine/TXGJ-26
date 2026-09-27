@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dk5i1w8g5aec3"]
 
+[ext_resource type="Script" uid="uid://yvkrodp1lr8p" path="res://stage/tutorial/tutorialCloser.gd" id="1_h4sia"]
 [ext_resource type="PackedScene" uid="uid://bpfgl7dtrl3fy" path="res://stage/tutorial/tutorial_popup.tscn" id="1_u7g2e"]
 [ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_xmdu3"]
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_xmdu3"]
@@ -16,11 +17,36 @@ size = Vector2(128, 80)
 
 [node name="Stage" type="Node" unique_id=1262384612]
 
-[node name="tutorialPopup" parent="." unique_id=1059973690 instance=ExtResource("1_u7g2e")]
-offset_left = -598.0
-offset_top = -701.0
-offset_right = -558.0
-offset_bottom = -661.0
+[node name="Tutorial" type="Node" parent="." unique_id=1712382951]
+script = ExtResource("1_h4sia")
+
+[node name="tutorialPopup" parent="Tutorial" unique_id=1059973690 instance=ExtResource("1_u7g2e")]
+offset_left = -584.0
+offset_top = -835.0
+offset_right = -544.0
+offset_bottom = -795.0
+
+[node name="TutorialBarrier" type="Node" parent="Tutorial" unique_id=560954781]
+
+[node name="Wall4" parent="Tutorial/TutorialBarrier" unique_id=2018087482 instance=ExtResource("6_u7g2e")]
+position = Vector2(600, -429.99997)
+scale = Vector2(0.84, 0.8)
+
+[node name="Wall5" parent="Tutorial/TutorialBarrier" unique_id=1174164275 instance=ExtResource("6_u7g2e")]
+position = Vector2(-600, -430)
+scale = Vector2(0.84, 0.8)
+
+[node name="Platform" parent="Tutorial/TutorialBarrier" unique_id=289374232 instance=ExtResource("5_au0sk")]
+position = Vector2(300, -150)
+scale = Vector2(0.4, 0.6)
+
+[node name="Platform2" parent="Tutorial/TutorialBarrier" unique_id=2017119428 instance=ExtResource("5_au0sk")]
+position = Vector2(-300, -150)
+scale = Vector2(0.4, 0.6)
+
+[node name="Platform3" parent="Tutorial/TutorialBarrier" unique_id=972746028 instance=ExtResource("5_au0sk")]
+position = Vector2(0, -1010)
+scale = Vector2(1.6, 0.6)
 
 [node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_xmdu3")]
 position = Vector2(0, -255)
@@ -92,7 +118,7 @@ uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 
 [node name="LayerGroundStaticPlatformsAndObstacles" type="Node2D" parent="." unique_id=936401722]
 scale = Vector2(0.8, 0.8)
 
-[node name="Platform3" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=289374232 instance=ExtResource("5_au0sk")]
+[node name="Platform3" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=1913309822 instance=ExtResource("5_au0sk")]
 position = Vector2(0, -450)
 
 [node name="Platform4" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=1285356585 instance=ExtResource("5_au0sk")]
@@ -130,7 +156,7 @@ position = Vector2(0, 625)
 
 [node name="Platform" parent="LayerGroundStaticPlatformsAndObstacles/PlatformWithStem" unique_id=1340592735 instance=ExtResource("5_au0sk")]
 
-[node name="Wall3" parent="LayerGroundStaticPlatformsAndObstacles/PlatformWithStem" unique_id=2018087482 instance=ExtResource("6_u7g2e")]
+[node name="Wall3" parent="LayerGroundStaticPlatformsAndObstacles/PlatformWithStem" unique_id=1470465726 instance=ExtResource("6_u7g2e")]
 position = Vector2(0, 176)
 
 [node name="PlatformWithStem2" type="Node2D" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=1460685101]
@@ -382,7 +408,13 @@ position = Vector2(0, -1200)
 
 [node name="Crowds" type="Node" parent="." unique_id=1563870285]
 
-[node name="Crowd" parent="Crowds" unique_id=1052000024 instance=ExtResource("3_xmdu3")]
+[node name="Crowd14" parent="Crowds" unique_id=1052000024 instance=ExtResource("3_xmdu3")]
+position = Vector2(-480, -245)
+
+[node name="Crowd15" parent="Crowds" unique_id=794588097 instance=ExtResource("3_xmdu3")]
+position = Vector2(480, -245)
+
+[node name="Crowd" parent="Crowds" unique_id=1178976519 instance=ExtResource("3_xmdu3")]
 position = Vector2(0, 436)
 
 [node name="Crowd3" parent="Crowds" unique_id=703650937 instance=ExtResource("3_xmdu3")]
@@ -410,10 +442,13 @@ position = Vector2(1799, 456)
 position = Vector2(-1200, -864)
 
 [node name="Crowd10" parent="Crowds" unique_id=243757547 instance=ExtResource("3_xmdu3")]
-position = Vector2(0, -774)
+position = Vector2(-600, -1004)
 
 [node name="Crowd11" parent="Crowds" unique_id=123189253 instance=ExtResource("3_xmdu3")]
 position = Vector2(-2600, 455)
 
 [node name="Crowd12" parent="Crowds" unique_id=1637661144 instance=ExtResource("3_xmdu3")]
 position = Vector2(2600, 456)
+
+[node name="Crowd13" parent="Crowds" unique_id=540230872 instance=ExtResource("3_xmdu3")]
+position = Vector2(600, -1004)
