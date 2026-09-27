@@ -5,7 +5,7 @@
 
 [node name="Chain" type="Node2D" unique_id=432440422]
 script = ExtResource("1_yrwea")
-launch_power = 100.0
+launch_power = 150.0
 chain_softness = 4.0
 link_width = 15.0
 link_height = 22.7
