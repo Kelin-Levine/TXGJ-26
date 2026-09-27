@@ -49,9 +49,10 @@ position = Vector2(0, -1010)
 scale = Vector2(1.6, 0.6)
 
 [node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_xmdu3")]
-position = Vector2(0, -255)
+position = Vector2(0, -71)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1389205491]
+position = Vector2(0, -71)
 offset = Vector2(0, -100)
 zoom = Vector2(0.6, 0.6)
 limit_enabled = false
@@ -63,6 +64,7 @@ rate = 1.5
 metadata/_custom_type_script = "uid://ve47y5q6sga5"
 
 [node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_q6r1r")]
+position = Vector2(0, 211)
 
 [node name="Bounding Walls" type="Node2D" parent="." unique_id=612395591]
 z_index = 5
@@ -122,10 +124,6 @@ scale = Vector2(0.8, 0.8)
 position = Vector2(0, -450)
 
 [node name="Platform4" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=1285356585 instance=ExtResource("5_au0sk")]
-position = Vector2(0, -100)
-
-[node name="Platform11" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=468966317 instance=ExtResource("5_au0sk")]
-position = Vector2(0, -100)
 
 [node name="Platform12" parent="LayerGroundStaticPlatformsAndObstacles" unique_id=263523163 instance=ExtResource("5_au0sk")]
 position = Vector2(-750, 625)
