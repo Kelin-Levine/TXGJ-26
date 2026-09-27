@@ -17,8 +17,9 @@ func _process(_delta: float) -> void:
 	var cameraSize := get_viewport().get_visible_rect().size
 	var relativePosition = global_position - isotopePosition
 
-	print(relativePosition)
-	print(cameraSize)
+	# print(relativePosition) #debug code
+	# print(cameraSize) #debug code
+	
 	#hide if within view of camera
 	if (abs(relativePosition.x) < cameraSize.x * amountOffScreen && abs(relativePosition.y) < cameraSize.y * amountOffScreen):
 		hide()
@@ -28,7 +29,7 @@ func _process(_delta: float) -> void:
 	# determine angle from centre of camera view to isotope
 	global_position = cameraPosition
 	var angleVector := cameraPosition.direction_to(isotopePosition)
-	print(angleVector)
+	# print(angleVector) # debug code
 	
 	global_position += angleVector * distFromCentre
 	rotation = angleVector.angle()
