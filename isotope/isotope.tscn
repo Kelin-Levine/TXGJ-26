@@ -5,6 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://bnn17u3hi27jc" path="res://isotope/tempArrow.png" id="2_2f6fj"]
 
 [node name="Isotope" type="Node2D" unique_id=1068156353]
+z_index = 2
 
 [node name="tempIgnore" type="Polygon2D" parent="." unique_id=582342186]
 visible = false
@@ -14,6 +15,7 @@ polygon = PackedVector2Array(0, -40, 40, 0, 0, 40, -40, 0)
 uv = PackedVector2Array(-42.285583, -48.28571, -1.1427612, -3.1428528, -45.714172, 39.14286, -81.71414, 4.285713)
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732996897]
+z_index = 4096
 position = Vector2(500, -900)
 texture = ExtResource("1_8o56m")
 

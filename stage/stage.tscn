@@ -1,5 +1,6 @@
 [gd_scene format=3 uid="uid://dk5i1w8g5aec3"]
 
+[ext_resource type="PackedScene" uid="uid://bpfgl7dtrl3fy" path="res://stage/tutorial/tutorial_popup.tscn" id="1_u7g2e"]
 [ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_xmdu3"]
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_xmdu3"]
 [ext_resource type="PackedScene" uid="uid://dpb2vcem3qdhh" path="res://the-guys/humans/crowd.tscn" id="3_xmdu3"]
@@ -14,6 +15,12 @@
 size = Vector2(128, 80)
 
 [node name="Stage" type="Node" unique_id=1262384612]
+
+[node name="tutorialPopup" parent="." unique_id=1059973690 instance=ExtResource("1_u7g2e")]
+offset_left = -598.0
+offset_top = -701.0
+offset_right = -558.0
+offset_bottom = -661.0
 
 [node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_xmdu3")]
 position = Vector2(0, -255)
