@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_v3mmb"]
 [ext_resource type="PackedScene" uid="uid://b3u64j5n081ax" path="res://the-guys/humans/chain.tscn" id="3_nusa8"]
 [ext_resource type="PackedScene" uid="uid://deech6nqsx2xg" path="res://the-guys/humans/chain-link.tscn" id="4_s88my"]
+[ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_ve7pq"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
@@ -38,3 +39,5 @@ rotation = -3.6895986
 
 [node name="ChainLink" parent="." unique_id=1288348938 instance=ExtResource("4_s88my")]
 position = Vector2(-110, -88)
+
+[node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_ve7pq")]

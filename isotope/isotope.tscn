@@ -1,8 +1,19 @@
 [gd_scene format=3 uid="uid://whrjm4vcpxg1"]
 
+[ext_resource type="Script" uid="uid://bf6xvdv1hsss" path="res://isotope/isotope_arrow.gd" id="1_tlbjn"]
+[ext_resource type="Texture2D" uid="uid://gg6km8fa77wb" path="res://icon.svg" id="1_yvvmg"]
+
 [node name="Isotope" type="Node2D" unique_id=1068156353]
 
-[node name="Polygon2D" type="Polygon2D" parent="." unique_id=582342186]
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=582342186 groups=["isotope"]]
 color = Color(1, 1, 0, 1)
 polygon = PackedVector2Array(0, -40, 40, 0, 0, 40, -40, 0)
 uv = PackedVector2Array(-42.285583, -48.28571, -1.1427612, -3.1428528, -45.714172, 39.14286, -81.71414, 4.285713)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=753067256]
+
+[node name="IsotopeArrow" type="Sprite2D" parent="CanvasLayer" unique_id=503817513 node_paths=PackedStringArray("isotope")]
+texture = ExtResource("1_yvvmg")
+script = ExtResource("1_tlbjn")
+isotope = NodePath("../../Polygon2D")
+metadata/_custom_type_script = "uid://bf6xvdv1hsss"
