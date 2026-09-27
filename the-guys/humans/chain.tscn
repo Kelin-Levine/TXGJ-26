@@ -12,3 +12,8 @@ link_height = 22.7
 link_angle = 72.0
 link_scene = ExtResource("1_780p0")
 metadata/_custom_type_script = "uid://n747sp6yaaf5"
+
+[node name="ReleaseStickyExpiryTimer" type="Timer" parent="." unique_id=1148935677]
+process_callback = 0
+wait_time = 3.0
+one_shot = true

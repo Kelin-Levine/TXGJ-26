@@ -40,6 +40,7 @@ func _physics_process(_delta: float) -> void:
 	var action_vector_zero := action_vector.is_zero_approx()
 
 	var do_jump: bool = Input.is_action_just_pressed(&"p1_jump")
+	var start_recall: bool = Input.is_action_just_pressed(&"p1_recall")
 
 	var do_action_mouse: bool = Input.is_action_just_pressed(&"p1_action_mouse")
 	var do_action_button: bool = Input.is_action_just_pressed(&"p1_action_button")
@@ -49,7 +50,7 @@ func _physics_process(_delta: float) -> void:
 	var stop_action_vector: bool = action_vector_zero and not action_vector_zero_last
 
 	# "Pull" action
-	mass = base_mass + (added_mass * move_down)
+	mass = base_mass + (added_mass * move_down * (1 if has_chain() else 0))
 
 	# Moving left/right
 	var move_power := ground_move_power if ground_test.is_colliding() else air_move_power
@@ -62,10 +63,11 @@ func _physics_process(_delta: float) -> void:
 
 	# Jump
 	if do_jump and ground_test.is_colliding():
+		# Uncomment for funny
 		#var power := jump_power
 		#var collision = ground_test.get_collider(0)
 		#if collision is RigidBody2D:
-		#	power /= 2  # comment for funny
+		#	power /= 2
 		#	collision.apply_impulse(Vector2(0.0, power / 10), ground_test.get_collision_point(0))
 		#apply_impulse(Vector2(0.0, -power))
 		apply_impulse(Vector2(0.0, -jump_power * mass))
@@ -81,6 +83,12 @@ func _physics_process(_delta: float) -> void:
 	# Release chain
 	if stop_action_mouse or stop_action_vector or stop_action_button:
 		release_chain()
+
+	# Extra check for recovering guys
+	if start_recall:
+		var colliding := get_colliding_bodies()
+		for body in colliding:
+			_on_body_entered(body)
 
 	# Finalize
 	action_vector_zero_last = action_vector_zero
@@ -102,7 +110,7 @@ func convert_to_follower(node: Node2D) -> void:
 
 func spawn_chain(at_rotation: float) -> void:
 	var num_followers := followers.size()
-	if chain_joint == null and num_followers > 0:
+	if not has_chain() and num_followers > 0:
 		var num_links := mini(num_followers, chain_links)
 		for i in range(num_links):
 			followers.pop_back().queue_free()
@@ -114,6 +122,13 @@ func spawn_chain(at_rotation: float) -> void:
 
 
 func release_chain() -> void:
-	if chain_joint != null:
+	if has_chain():
+		var chain := chain_joint.get_parent()
 		chain_joint.queue_free()
 		chain_joint = null
+		if chain.has_method(&"release_chain"):  # almost certainly redundant but im scared
+			chain.release_chain()
+
+
+func has_chain() -> bool:
+	return chain_joint != null
