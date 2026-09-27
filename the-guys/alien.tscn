@@ -8,13 +8,13 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4fn6d"]
 
 [sub_resource type="Curve" id="Curve_4fn6d"]
-_limits = [1000.0, 2500.0, 0.0, 500.0]
-_data = [Vector2(0, 2500), 0.0, 0.0, 0, 0, Vector2(500, 1000), -9.234236, -4.7877684, 0, 0]
+_limits = [1000.0, 2500.0, 0.0, 400.0]
+_data = [Vector2(0, 2500), 0.0, 0.0, 0, 0, Vector2(400, 1000), -11.390262, -4.7877684, 0, 0]
 point_count = 2
 
 [sub_resource type="Curve" id="Curve_s5vku"]
-_limits = [0.0, 1300.0, 0.0, 500.0]
-_data = [Vector2(0, 1300), 0.0, 0.0, 0, 0, Vector2(500, 0), -8.171674, 0.0, 0, 0]
+_limits = [0.0, 1300.0, 0.0, 400.0]
+_data = [Vector2(0, 1300), 0.0, 0.0, 0, 0, Vector2(400, 0), -10.13653, 0.0, 0, 0]
 point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivqea"]
@@ -22,6 +22,9 @@ size = Vector2(30, 62)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrwea"]
 size = Vector2(24, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_enn2l"]
+size = Vector2(2, 56)
 
 [node name="green neil" type="RigidBody2D" unique_id=2122505308]
 collision_layer = 2
@@ -37,6 +40,7 @@ ground_move_power = SubResource("Curve_4fn6d")
 air_move_power = SubResource("Curve_s5vku")
 jump_power = 700.0
 added_mass = 5.0
+chain_links = 6
 follower_scene = ExtResource("2_enn2l")
 chain_scene = ExtResource("2_s5vku")
 metadata/_custom_type_script = "uid://8j0wjs3glr3a"
@@ -54,3 +58,15 @@ shape = SubResource("RectangleShape2D_yrwea")
 target_position = Vector2(0, 0)
 max_results = 1
 collision_mask = 7
+
+[node name="WallTestL" type="ShapeCast2D" parent="." unique_id=1956377228]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_enn2l")
+target_position = Vector2(0, 0)
+max_results = 1
+
+[node name="WallTestR" type="ShapeCast2D" parent="." unique_id=2120093056]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_enn2l")
+target_position = Vector2(0, 0)
+max_results = 1

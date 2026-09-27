@@ -13,6 +13,8 @@ extends RapierRigidBody2D
 
 @onready var sprite: Sprite2D = $Sprite2D
 @onready var ground_test: ShapeCast2D = $GroundTest
+@onready var wall_test_l: ShapeCast2D = $WallTestL
+@onready var wall_test_r: ShapeCast2D = $WallTestR
 
 var followers: Array[Follower] = []
 var chain_joint: RapierPinJoint2D = null
@@ -59,6 +61,10 @@ func _physics_process(_delta: float) -> void:
 		move_sample = move_power.sample(maxf(0.0, linear_velocity.x)) * move_lr
 	else:
 		move_sample = move_power.sample(-minf(0.0, linear_velocity.x)) * move_lr
+	if wall_test_l.is_colliding():  # prevents sticking to walls
+		move_sample = maxf(0.0, move_sample)
+	if wall_test_r.is_colliding():
+		move_sample = minf(0.0, move_sample)
 	apply_central_force(Vector2(move_sample * mass, 0.0))
 
 	# Jump
