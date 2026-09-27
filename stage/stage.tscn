@@ -22,9 +22,9 @@ script = ExtResource("1_h4sia")
 
 [node name="tutorialPopup" parent="Tutorial" unique_id=1059973690 instance=ExtResource("1_u7g2e")]
 offset_left = -584.0
-offset_top = -835.0
+offset_top = -781.0
 offset_right = -544.0
-offset_bottom = -795.0
+offset_bottom = -741.0
 
 [node name="TutorialBarrier" type="Node" parent="Tutorial" unique_id=560954781]
 
@@ -36,13 +36,21 @@ scale = Vector2(0.84, 0.8)
 position = Vector2(-600, -430)
 scale = Vector2(0.84, 0.8)
 
-[node name="Platform" parent="Tutorial/TutorialBarrier" unique_id=289374232 instance=ExtResource("5_au0sk")]
-position = Vector2(300, -150)
-scale = Vector2(0.4, 0.6)
-
 [node name="Platform2" parent="Tutorial/TutorialBarrier" unique_id=2017119428 instance=ExtResource("5_au0sk")]
-position = Vector2(-300, -150)
-scale = Vector2(0.4, 0.6)
+position = Vector2(-350, -145)
+scale = Vector2(0.2, 0.7)
+
+[node name="Platform4" parent="Tutorial/TutorialBarrier" unique_id=289374232 instance=ExtResource("5_au0sk")]
+position = Vector2(-250, -75)
+scale = Vector2(0.2, 0.7)
+
+[node name="Platform5" parent="Tutorial/TutorialBarrier" unique_id=124855964 instance=ExtResource("5_au0sk")]
+position = Vector2(350, -145)
+scale = Vector2(0.2, 0.7)
+
+[node name="Platform6" parent="Tutorial/TutorialBarrier" unique_id=73192314 instance=ExtResource("5_au0sk")]
+position = Vector2(250, -75)
+scale = Vector2(0.2, 0.7)
 
 [node name="Platform3" parent="Tutorial/TutorialBarrier" unique_id=972746028 instance=ExtResource("5_au0sk")]
 position = Vector2(0, -1010)
