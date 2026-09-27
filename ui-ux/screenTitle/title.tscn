@@ -1,10 +1,16 @@
 [gd_scene format=3 uid="uid://b4ahsqmd3t4si"]
 
 [ext_resource type="Script" uid="uid://c0kodco33v86m" path="res://ui-ux/screenTitle/title.gd" id="1_3b4vc"]
-[ext_resource type="Script" uid="uid://bmahsml41vur5" path="res://ui-ux/screenTitle/title_display.gd" id="1_bmrs4"]
+[ext_resource type="Texture2D" uid="uid://8ytv53mjwlt2" path="res://Art Assets/title cropped.png" id="2_dchhv"]
 [ext_resource type="Script" uid="uid://mxvuimjqi473" path="res://ui-ux/screenTitle/title_button_quit.gd" id="3_mso1k"]
+[ext_resource type="Texture2D" uid="uid://dg0j0ucitpye2" path="res://Art Assets/Play.png" id="3_pisae"]
 [ext_resource type="Script" uid="uid://cw3tv8nn8k6my" path="res://ui-ux/screenTitle/title_button_play.gd" id="3_vc2kx"]
+[ext_resource type="Texture2D" uid="uid://c56v8n1vqsj7f" path="res://Art Assets/PlayPress.png" id="4_axthu"]
 [ext_resource type="Script" uid="uid://ch12bmmgi8oot" path="res://ui-ux/screenTitle/title_button_green.gd" id="4_x2ro4"]
+[ext_resource type="Texture2D" uid="uid://brmi5fuy6x030" path="res://Art Assets/Green.png" id="6_yc41x"]
+[ext_resource type="Texture2D" uid="uid://3m3p5x2h0fpj" path="res://Art Assets/GreenPress.png" id="7_vh0lh"]
+[ext_resource type="Texture2D" uid="uid://cdff2blxoxw1u" path="res://Art Assets/Quit.png" id="9_dchhv"]
+[ext_resource type="Texture2D" uid="uid://e3kfjgdh8b38" path="res://Art Assets/QuitPress.png" id="10_8cce5"]
 
 [node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("button")]
 layout_mode = 3
@@ -14,48 +20,68 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b4vc")
-button = NodePath("CenterContainer/BoxContainer/BoxContainer/TitleButtonPlay")
+button = NodePath("AspectRatioContainer/VBoxContainer/HBoxContainer/TitleButtonPlay")
 
-[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1885116217]
+[node name="Background" type="Sprite2D" parent="." unique_id=1478029028]
+z_index = -1
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="." unique_id=524250153]
 layout_mode = 1
-anchors_preset = 13
-anchor_left = 0.5
-anchor_right = 0.5
+anchors_preset = 15
+anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -0.5
-offset_right = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="BoxContainer" type="BoxContainer" parent="CenterContainer" unique_id=143869613]
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer" unique_id=368006687]
+custom_minimum_size = Vector2(100, 0)
+custom_maximum_size = Vector2(10000, -1)
+propagate_maximum_size = false
 layout_mode = 2
 alignment = 1
-vertical = true
 
-[node name="TitleDisplay" type="Label" parent="CenterContainer/BoxContainer" unique_id=293584587]
-clip_contents = true
+[node name="TextureRect" type="TextureRect" parent="AspectRatioContainer/VBoxContainer" unique_id=734512383]
+custom_minimum_size = Vector2(100, 75)
 layout_mode = 2
-size_flags_vertical = 1
-focus_mode = 3
-mouse_filter = 0
-horizontal_alignment = 1
-script = ExtResource("1_bmrs4")
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.81
+texture = ExtResource("2_dchhv")
+expand_mode = 5
+stretch_mode = 5
 
-[node name="BoxContainer" type="BoxContainer" parent="CenterContainer/BoxContainer" unique_id=684633746]
+[node name="HBoxContainer" type="HBoxContainer" parent="AspectRatioContainer/VBoxContainer" unique_id=1910950917]
+custom_minimum_size = Vector2(500, 150)
 layout_mode = 2
-vertical = true
+size_flags_vertical = 3
 
-[node name="TitleButtonPlay" type="Button" parent="CenterContainer/BoxContainer/BoxContainer" unique_id=426920599]
+[node name="TitleButtonPlay" type="TextureButton" parent="AspectRatioContainer/VBoxContainer/HBoxContainer" unique_id=929513815]
+custom_maximum_size = Vector2(-1, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("3_pisae")
+texture_pressed = ExtResource("4_axthu")
+ignore_texture_size = true
+stretch_mode = 4
 script = ExtResource("3_vc2kx")
 metadata/_custom_type_script = "uid://cw3tv8nn8k6my"
 
-[node name="TitleButtonGreen" type="Button" parent="CenterContainer/BoxContainer/BoxContainer" unique_id=2122786127]
+[node name="TitleButtonGreen" type="TextureButton" parent="AspectRatioContainer/VBoxContainer/HBoxContainer" unique_id=1086826823]
 layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("6_yc41x")
+texture_pressed = ExtResource("7_vh0lh")
+ignore_texture_size = true
+stretch_mode = 4
 script = ExtResource("4_x2ro4")
 metadata/_custom_type_script = "uid://ch12bmmgi8oot"
 
-[node name="TitleButtonQuit" type="Button" parent="CenterContainer/BoxContainer/BoxContainer" unique_id=1249547997]
+[node name="TitleButtonQuit" type="TextureButton" parent="AspectRatioContainer/VBoxContainer/HBoxContainer" unique_id=428942660]
+custom_maximum_size = Vector2(-1, 150)
 layout_mode = 2
+size_flags_horizontal = 3
+texture_normal = ExtResource("9_dchhv")
+texture_pressed = ExtResource("10_8cce5")
+ignore_texture_size = true
+stretch_mode = 4
 script = ExtResource("3_mso1k")
 metadata/_custom_type_script = "uid://mxvuimjqi473"

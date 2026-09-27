@@ -1,10 +1,9 @@
 class_name TitleButtonQuit
-extends Button
+extends TextureButton
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "QUIT"
 	if is_web():
 		visible = false
 	pressed.connect(_buttton_pressed)

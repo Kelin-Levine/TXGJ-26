@@ -32,5 +32,5 @@ func _process(_delta: float) -> void:
 	# print(angleVector) # debug code
 	
 	global_position += angleVector * distFromCentre
-	rotation = angleVector.angle()
+	global_rotation = angleVector.angle()
 	
