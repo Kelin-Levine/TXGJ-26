@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0m7iwhs340d" path="res://stage/platform.tscn" id="5_au0sk"]
 [ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_q6r1r"]
 [ext_resource type="PackedScene" uid="uid://cx1kmdxbxqx08" path="res://stage/wall.tscn" id="6_u7g2e"]
+[ext_resource type="PackedScene" uid="uid://3r4t4slh30dk" path="res://terminal/terminal.tscn" id="9_h4sia"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
@@ -17,10 +18,10 @@ size = Vector2(128, 80)
 [node name="Stage" type="Node" unique_id=1262384612]
 
 [node name="tutorialPopup" parent="." unique_id=1059973690 instance=ExtResource("1_u7g2e")]
-offset_left = -598.0
-offset_top = -701.0
-offset_right = -558.0
-offset_bottom = -661.0
+offset_left = -707.0
+offset_top = -792.0
+offset_right = -667.0
+offset_bottom = -752.0
 
 [node name="green neil" parent="." unique_id=1081616044 groups=["grdfhgfg"] instance=ExtResource("1_xmdu3")]
 position = Vector2(0, -255)
@@ -396,3 +397,6 @@ position = Vector2(752, -124)
 
 [node name="Crowd4" parent="Crowds" unique_id=1365758457 instance=ExtResource("3_xmdu3")]
 position = Vector2(2255, -127)
+
+[node name="Terminal" parent="." unique_id=991612544 instance=ExtResource("9_h4sia")]
+position = Vector2(-212, -152)

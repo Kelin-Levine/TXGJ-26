@@ -16,7 +16,6 @@ uv = PackedVector2Array(-42.285583, -48.28571, -1.1427612, -3.1428528, -45.71417
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732996897]
 z_index = 4096
-position = Vector2(500, -900)
 texture = ExtResource("1_8o56m")
 
 [node name="IsotopeArrow" type="Sprite2D" parent="Sprite2D" unique_id=1092718032]
