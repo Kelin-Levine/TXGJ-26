@@ -2,14 +2,16 @@
 
 [ext_resource type="Script" uid="uid://yvkrodp1lr8p" path="res://stage/tutorial/tutorialCloser.gd" id="1_h4sia"]
 [ext_resource type="PackedScene" uid="uid://bpfgl7dtrl3fy" path="res://stage/tutorial/tutorial_popup.tscn" id="1_u7g2e"]
+[ext_resource type="PackedScene" uid="uid://bdmqyqxd20qlg" path="res://upgrades/upgrade-manager.tscn" id="1_xcdwj"]
 [ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_xmdu3"]
 [ext_resource type="Script" uid="uid://ve47y5q6sga5" path="res://util/chaseify.gd" id="2_xmdu3"]
 [ext_resource type="PackedScene" uid="uid://dpb2vcem3qdhh" path="res://the-guys/humans/crowd.tscn" id="3_xmdu3"]
 [ext_resource type="PackedScene" uid="uid://em2nhvm2tiv1" path="res://stage/double-pendulum.tscn" id="4_6k7cv"]
 [ext_resource type="PackedScene" uid="uid://bu0m7iwhs340d" path="res://stage/platform.tscn" id="5_au0sk"]
 [ext_resource type="Script" uid="uid://o3gnq3y7st5l" path="res://isotope/isotope-destroyer.gd" id="5_h4sia"]
-[ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="5_q6r1r"]
 [ext_resource type="PackedScene" uid="uid://cx1kmdxbxqx08" path="res://stage/wall.tscn" id="6_u7g2e"]
+[ext_resource type="Script" uid="uid://6e7rdacqmmvd" path="res://isotope/isotope-ceiling.gd" id="9_xcdwj"]
+[ext_resource type="PackedScene" uid="uid://3r4t4slh30dk" path="res://terminal/terminal.tscn" id="11_eefs8"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
@@ -18,14 +20,18 @@ size = Vector2(128, 80)
 
 [node name="Stage" type="Node" unique_id=1262384612]
 
+[node name="UpgradeManager" parent="." unique_id=1858642243 node_paths=PackedStringArray("tutorial", "alien") instance=ExtResource("1_xcdwj")]
+tutorial = NodePath("../Tutorial")
+alien = NodePath("../green neil")
+
 [node name="Tutorial" type="Node" parent="." unique_id=1712382951]
 script = ExtResource("1_h4sia")
 
 [node name="tutorialPopup" parent="Tutorial" unique_id=1059973690 instance=ExtResource("1_u7g2e")]
-offset_left = -584.0
-offset_top = -781.0
-offset_right = -544.0
-offset_bottom = -741.0
+offset_left = -560.0
+offset_top = -980.0
+offset_right = -520.0
+offset_bottom = -940.0
 
 [node name="TutorialBarrier" type="Node" parent="Tutorial" unique_id=560954781]
 
@@ -72,10 +78,6 @@ target = NodePath("../../green neil")
 rate = 1.5
 metadata/_custom_type_script = "uid://ve47y5q6sga5"
 
-[node name="Isotope" parent="." unique_id=1068156353 instance=ExtResource("5_q6r1r")]
-position = Vector2(0, -221)
-smack_height = -1400.0
-
 [node name="Bounding Walls" type="Node2D" parent="." unique_id=612395591]
 z_index = 5
 scale = Vector2(0.8, 0.8)
@@ -94,10 +96,12 @@ scale = Vector2(25, 23.448)
 polygon = PackedVector2Array(-280.0001, -5.722046e-06, 279.99985, -5.722046e-06, 279.99985, 87.999985, -280.0001, 87.999985)
 uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 119.999985, -208.00006, 119.999985)
 
-[node name="Ceiling" type="StaticBody2D" parent="Bounding Walls" unique_id=1882766047]
+[node name="Ceiling" type="StaticBody2D" parent="Bounding Walls" unique_id=597806368]
 position = Vector2(0, -2000)
 rotation = -3.1415925
 collision_layer = 17
+script = ExtResource("9_xcdwj")
+metadata/_custom_type_script = "uid://6e7rdacqmmvd"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Bounding Walls/Ceiling" unique_id=889979723]
 shape = SubResource("WorldBoundaryShape2D_ivqea")
@@ -276,6 +280,14 @@ scale = Vector2(1, 0.5)
 position = Vector2(3625, 625)
 scale = Vector2(1, 0.5)
 
+[node name="Platform7" parent="Layer2StaticPlatforms" unique_id=464908984 instance=ExtResource("5_au0sk")]
+position = Vector2(-750, 142.5)
+scale = Vector2(0.99999994, 0.24999999)
+
+[node name="Platform8" parent="Layer2StaticPlatforms" unique_id=310436384 instance=ExtResource("5_au0sk")]
+position = Vector2(750, 75)
+scale = Vector2(0.99999994, 0.24999999)
+
 [node name="Layer3StaticPlatforms" type="Node2D" parent="." unique_id=478794473]
 scale = Vector2(0.8, 0.8)
 
@@ -418,7 +430,7 @@ position = Vector2(1200, -200)
 position = Vector2(2400, -200)
 
 [node name="DoublePendulum5" parent="Non-Static Platforms" unique_id=1212448834 instance=ExtResource("4_6k7cv")]
-position = Vector2(0, -1200)
+position = Vector2(0, -1398)
 
 [node name="Crowds" type="Node" parent="." unique_id=1563870285]
 
@@ -459,10 +471,46 @@ position = Vector2(-1200, -864)
 position = Vector2(-600, -1004)
 
 [node name="Crowd11" parent="Crowds" unique_id=123189253 instance=ExtResource("3_xmdu3")]
-position = Vector2(-2600, 455)
+position = Vector2(-2400, 455)
 
 [node name="Crowd12" parent="Crowds" unique_id=1637661144 instance=ExtResource("3_xmdu3")]
-position = Vector2(2600, 456)
+position = Vector2(2400, 456)
 
 [node name="Crowd13" parent="Crowds" unique_id=540230872 instance=ExtResource("3_xmdu3")]
 position = Vector2(600, -1004)
+
+[node name="Terminals" type="Node" parent="." unique_id=1946715591]
+
+[node name="Terminal" parent="Terminals" unique_id=991612544 instance=ExtResource("11_eefs8")]
+position = Vector2(0, -750)
+initially_active = true
+
+[node name="Terminal2" parent="Terminals" unique_id=923574861 instance=ExtResource("11_eefs8")]
+position = Vector2(-600, 480)
+
+[node name="Terminal3" parent="Terminals" unique_id=1562565164 instance=ExtResource("11_eefs8")]
+position = Vector2(-1800, 130)
+
+[node name="Terminal4" parent="Terminals" unique_id=459391186 instance=ExtResource("11_eefs8")]
+position = Vector2(-2400, -480)
+
+[node name="Terminal5" parent="Terminals" unique_id=576700146 instance=ExtResource("11_eefs8")]
+position = Vector2(-1800, -980)
+
+[node name="Terminal6" parent="Terminals" unique_id=1485985326 instance=ExtResource("11_eefs8")]
+position = Vector2(-2600, 480)
+
+[node name="Terminal7" parent="Terminals" unique_id=1415706292 instance=ExtResource("11_eefs8")]
+position = Vector2(600, 480)
+
+[node name="Terminal8" parent="Terminals" unique_id=145675902 instance=ExtResource("11_eefs8")]
+position = Vector2(1800, 130)
+
+[node name="Terminal9" parent="Terminals" unique_id=1219797519 instance=ExtResource("11_eefs8")]
+position = Vector2(2400, -480)
+
+[node name="Terminal10" parent="Terminals" unique_id=1900918997 instance=ExtResource("11_eefs8")]
+position = Vector2(1800, -980)
+
+[node name="Terminal11" parent="Terminals" unique_id=1315084933 instance=ExtResource("11_eefs8")]
+position = Vector2(2600, 480)

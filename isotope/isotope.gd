@@ -1,8 +1,9 @@
 class_name Isotope
 extends RapierRigidBody2D
 
-@export var max_velocity: float = 1.0
+@export var fall_speed: float = 1.0
 @export var smack_height: float = 0.0
+@export var smack_velocity: float = 1200.0
 @export var warn_color: Color
 @export var lose_color: Color
 
@@ -21,11 +22,12 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if smacked:
-		linear_velocity.y = max_velocity * -10.0
+		linear_velocity.y = fall_speed * -15.0
 		if global_position.y < smack_height:
 			unsmack()
 	else:
-		linear_velocity = linear_velocity.limit_length(max_velocity)
+		#linear_velocity = linear_velocity.limit_length(fall_speed)
+		linear_velocity.y = minf(linear_velocity.y, fall_speed)
 
 
 func _on_body_entered(body: Node) -> void:
@@ -71,6 +73,7 @@ func do_game_end_flash() -> void:
 func smack() -> void:
 	smacked = true
 	collision_shape.disabled = true
+	linear_velocity.x = randf_range(-smack_velocity, smack_velocity)
 
 
 func unsmack() -> void:

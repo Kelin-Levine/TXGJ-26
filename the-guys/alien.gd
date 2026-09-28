@@ -3,6 +3,7 @@ extends RapierRigidBody2D
 
 @export var ground_move_power: Curve
 @export var air_move_power: Curve
+@export var move_multiplier: float = 1.0
 @export var jump_power: float
 @export var base_mass: float = 1.0
 @export var added_mass: float = 0.0
@@ -65,7 +66,7 @@ func _physics_process(_delta: float) -> void:
 		move_sample = maxf(0.0, move_sample)
 	if wall_test_r.is_colliding():
 		move_sample = minf(0.0, move_sample)
-	apply_central_force(Vector2(move_sample * mass, 0.0))
+	apply_central_force(Vector2(move_sample * move_multiplier * mass, 0.0))
 
 	# Jump
 	if do_jump and ground_test.is_colliding():

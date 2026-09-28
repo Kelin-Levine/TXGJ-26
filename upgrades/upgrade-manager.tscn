@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bdmqyqxd20qlg"]
+
+[ext_resource type="Script" uid="uid://cj51qujaov60" path="res://upgrades/upgrade-manager.gd" id="1_0yuqe"]
+[ext_resource type="PackedScene" uid="uid://whrjm4vcpxg1" path="res://isotope/isotope.tscn" id="2_tg1p1"]
+
+[node name="UpgradeManager" type="Node" unique_id=1858642243 groups=["UpgradeManager"]]
+script = ExtResource("1_0yuqe")
+isotope_scene = ExtResource("2_tg1p1")
+metadata/_custom_type_script = "uid://cj51qujaov60"

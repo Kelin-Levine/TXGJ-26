@@ -3,30 +3,68 @@
 [ext_resource type="Script" uid="uid://qjwsjox3sds3" path="res://terminal/terminalSignal.gd" id="2_cgvah"]
 [ext_resource type="Texture2D" uid="uid://bv4n0veyio1ai" path="res://the-guys/green neil.png" id="2_osw5p"]
 [ext_resource type="Texture2D" uid="uid://ddcrtdxs1udp" path="res://the-guys/humans/red jimmy.png" id="3_sd0vt"]
+[ext_resource type="FontFile" uid="uid://byoarw1rnd4cr" path="res://addons/fonts/Iceland/Iceland-Regular.ttf" id="4_sd0vt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivqea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_sd0vt")
+}],
+"loop": 1,
+"name": &"off",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_osw5p")
+}],
+"loop": 1,
+"name": &"on",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33212"]
 size = Vector2(64, 78)
 
-[node name="RapierArea2D" type="Area2D" unique_id=991612544]
-collision_layer = 2
-collision_mask = 0
+[node name="Terminal" type="Area2D" unique_id=991612544 groups=["Terminal"]]
+collision_mask = 2
 script = ExtResource("2_cgvah")
 metadata/_custom_type_script = "uid://cburu6b4ckehs"
 
 [node name="Polygon2D" type="Polygon2D" parent="." unique_id=9763531]
+visible = false
 scale = Vector2(1, 1.3928572)
 color = Color(1, 0, 0, 1)
 polygon = PackedVector2Array(-32, -56, -32, 0, 32, 0, 32, -56, 0, -55.999996)
 uv = PackedVector2Array(-456, -72, -456, -16, -392, -16, -392, -72)
 
-[node name="spriteActive" type="Sprite2D" parent="." unique_id=173830760]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=132968596]
+z_index = -1
 position = Vector2(0, -32)
-texture = ExtResource("2_osw5p")
-
-[node name="spriteInactive" type="Sprite2D" parent="." unique_id=1132991758]
-position = Vector2(0, -32)
-texture = ExtResource("3_sd0vt")
+sprite_frames = SubResource("SpriteFrames_ivqea")
+animation = &"off"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971236921]
 position = Vector2(0, -39)
 shape = SubResource("RectangleShape2D_33212")
+
+[node name="Label" type="Label" parent="." unique_id=1263276614]
+visible = false
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -134.0
+offset_top = -120.0
+offset_right = 136.0
+offset_bottom = -78.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("4_sd0vt")
+theme_override_font_sizes/font_size = 42
+text = "You Got Power!!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LabelTimer" type="Timer" parent="." unique_id=1850758399]
+wait_time = 5.0
+one_shot = true

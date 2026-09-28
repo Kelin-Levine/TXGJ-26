@@ -25,6 +25,11 @@ Greenify="*uid://bcg600ic5lfgj"
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
+[global_group]
+
+UpgradeManager=""
+Terminal=""
+
 [input]
 
 p1_move_left={
