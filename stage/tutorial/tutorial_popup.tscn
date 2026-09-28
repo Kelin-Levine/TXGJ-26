@@ -2,11 +2,15 @@
 
 [ext_resource type="FontFile" uid="uid://byoarw1rnd4cr" path="res://addons/fonts/Iceland/Iceland-Regular.ttf" id="2_3aw6r"]
 
+[sub_resource type="Theme" id="Theme_ex1lk"]
+Label/fonts/font = ExtResource("2_3aw6r")
+
 [node name="tutorialPopup" type="Control" unique_id=1453636833]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = SubResource("Theme_ex1lk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=658535395]
 layout_mode = 0
@@ -30,16 +34,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3aw6r")
 theme_override_font_sizes/font_size = 24
 text = "A/D to run, Space to jump!
-"
-horizontal_alignment = 1
-
-[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1833363606]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3aw6r")
-theme_override_font_sizes/font_size = 24
-text = "Check the Itch page for 
-gamepad and alternative 
-mouseless keyboard controls.
 "
 horizontal_alignment = 1
 
@@ -67,8 +61,17 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3aw6r")
 theme_override_font_sizes/font_size = 24
 text = "After throwing a chain, release 
-Left Click to let go. The chain 
-will unstick after a few seconds.
+Left Click to let go.
+"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1833363606]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Check the Itch page for 
+gamepad and alternative 
+mouseless keyboard controls.
 "
 horizontal_alignment = 1
 
@@ -82,20 +85,18 @@ text = "                                                                        
 [node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=39319675]
 layout_mode = 2
 theme_override_font_sizes/font_size = 20
-text = "
-
-
-
-
-Touch the terminal below to 
+text = "Touch the terminal below to 
 begin the game!"
 horizontal_alignment = 1
 
 [node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer3" unique_id=478705393]
 layout_mode = 2
+theme_override_colors/font_color = Color(1, 0.73, 0.73, 1)
 theme_override_fonts/font = ExtResource("2_3aw6r")
 theme_override_font_sizes/font_size = 24
 text = "
+
+
 
 
 
@@ -123,6 +124,18 @@ text = "
 "
 horizontal_alignment = 1
 
+[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=114879947]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_3aw6r")
+theme_override_font_sizes/font_size = 24
+text = "Collect scientists around the lab!
+You need them to throw chains.
+
+Hold Right Click while touching
+dropped chains to pick them up.
+"
+horizontal_alignment = 1
+
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=643982381]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3aw6r")
@@ -130,18 +143,6 @@ theme_override_font_sizes/font_size = 24
 text = "Dropped chains can still hit the
  isotope! They can also be stood 
 on as platforms.
-"
-horizontal_alignment = 1
-
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=114879947]
-layout_mode = 2
-theme_override_fonts/font = ExtResource("2_3aw6r")
-theme_override_font_sizes/font_size = 24
-text = "Collect scientists around the 
-lab to use as chains!
-
-Hold Right Click while touching 
-dropped chains to recover scientists.
 "
 horizontal_alignment = 1
 

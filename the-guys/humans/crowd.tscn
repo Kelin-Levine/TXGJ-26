@@ -5,6 +5,8 @@
 
 [node name="Crowd" type="Node2D" unique_id=1052000024]
 script = ExtResource("1_i3b4b")
+min_followers = 8
+max_followers = 8
 stray_follower_scene = ExtResource("2_1hxte")
 metadata/_custom_type_script = "uid://c62pbev7d36ge"
 

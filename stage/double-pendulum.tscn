@@ -34,7 +34,7 @@ rotation = 1.5707964
 shape = SubResource("RectangleShape2D_nr0v7")
 
 [node name="Visual" type="Polygon2D" parent="Arm1" unique_id=1631173460]
-z_index = -1
+z_index = -2
 color = Color(0.6039216, 0.6, 0.627451, 1)
 polygon = PackedVector2Array(-25, -100, 25, -100, 25, 100, -25, 100)
 uv = PackedVector2Array(-111.99988, -27.71428, -2.2855835, -38.571426, -5.142761, 14, -119.99988, 19.714287)
