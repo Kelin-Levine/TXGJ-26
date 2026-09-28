@@ -1,6 +1,6 @@
 extends Control
 
-@export var button: Button
+@export var button: TextureButton
 @export var game: PackedScene # attach whatever scene is for the game
 @export var scoreBoard: PackedScene # attach whatever scene is for the scoreboard (unless later attached to the game, then delete)
 # Called when the node enters the scene tree for the first time.

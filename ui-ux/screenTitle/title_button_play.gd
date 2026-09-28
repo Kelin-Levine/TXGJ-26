@@ -1,9 +1,8 @@
 class_name TitleButtonPlay
-extends Button
+extends TextureButton
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	text = "PLAY"
 	pressed.connect(_buttton_pressed)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
