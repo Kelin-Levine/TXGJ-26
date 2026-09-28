@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dk5i1w8g5aec3"]
 
 [ext_resource type="Script" uid="uid://yvkrodp1lr8p" path="res://stage/tutorial/tutorialCloser.gd" id="1_h4sia"]
+[ext_resource type="AudioStream" uid="uid://cditokits1gt" path="res://Art Assets/Texas game Jam 2026 main theme - ver 3.ogg" id="1_qrooq"]
 [ext_resource type="PackedScene" uid="uid://bpfgl7dtrl3fy" path="res://stage/tutorial/tutorial_popup.tscn" id="1_u7g2e"]
 [ext_resource type="PackedScene" uid="uid://bdmqyqxd20qlg" path="res://upgrades/upgrade-manager.tscn" id="1_xcdwj"]
 [ext_resource type="PackedScene" uid="uid://bfpcpp8ysqflb" path="res://the-guys/alien.tscn" id="1_xmdu3"]
@@ -34,6 +35,10 @@ sky = SubResource("Sky_tcqas")
 
 [node name="Stage" type="Node" unique_id=1262384612]
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer" parent="." unique_id=577264764]
+stream = ExtResource("1_qrooq")
+autoplay = true
+
 [node name="UpgradeManager" parent="." unique_id=1858642243 node_paths=PackedStringArray("tutorial", "alien") instance=ExtResource("1_xcdwj")]
 tutorial = NodePath("../Tutorial")
 alien = NodePath("../green neil")
@@ -42,9 +47,9 @@ alien = NodePath("../green neil")
 script = ExtResource("1_h4sia")
 
 [node name="tutorialPopup" parent="Tutorial" unique_id=1059973690 instance=ExtResource("1_u7g2e")]
-offset_left = -560.0
+offset_left = -539.0
 offset_top = -980.0
-offset_right = -520.0
+offset_right = -499.0
 offset_bottom = -940.0
 
 [node name="TutorialBarrier" type="Node" parent="Tutorial" unique_id=560954781]

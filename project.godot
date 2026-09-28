@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="TXGJ-26"
+config/name="Green Neil's Nuclear Extravaganza"
 run/main_scene="uid://cwpmf1ey4mbyi"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"

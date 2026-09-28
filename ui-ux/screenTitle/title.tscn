@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://b4ahsqmd3t4si"]
 
 [ext_resource type="Script" uid="uid://c0kodco33v86m" path="res://ui-ux/screenTitle/title.gd" id="1_3b4vc"]
+[ext_resource type="AudioStream" uid="uid://dk08nspyw0g8c" path="res://Art Assets/2026_GameJam_MainMenu.ogg" id="2_8cce5"]
 [ext_resource type="Texture2D" uid="uid://8ytv53mjwlt2" path="res://Art Assets/title cropped.png" id="2_dchhv"]
 [ext_resource type="Script" uid="uid://mxvuimjqi473" path="res://ui-ux/screenTitle/title_button_quit.gd" id="3_mso1k"]
 [ext_resource type="Texture2D" uid="uid://dg0j0ucitpye2" path="res://Art Assets/Play.png" id="3_pisae"]
@@ -12,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://cdff2blxoxw1u" path="res://Art Assets/Quit.png" id="9_dchhv"]
 [ext_resource type="Texture2D" uid="uid://e3kfjgdh8b38" path="res://Art Assets/QuitPress.png" id="10_8cce5"]
 
-[node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("button")]
+[node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("buttonPlay", "audioPlayer")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +21,12 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b4vc")
-button = NodePath("AspectRatioContainer/VBoxContainer/HBoxContainer/TitleButtonPlay")
+buttonPlay = NodePath("AspectRatioContainer/VBoxContainer/HBoxContainer/TitleButtonPlay")
+audioPlayer = NodePath("AudioStreamPlayer")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=1928916143]
+stream = ExtResource("2_8cce5")
+autoplay = true
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1478029028]
 z_index = -1

@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://br6p4qb4d8yba" path="res://ui-ux/score/score_display.gd" id="2_ss68c"]
 
 [node name="ScoreTicker" type="CanvasLayer" unique_id=839163037]
+layer = 10
 
 [node name="ScoreDisplayMargin" type="MarginContainer" parent="." unique_id=993479863]
 top_level = true

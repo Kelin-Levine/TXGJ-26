@@ -21,6 +21,7 @@ var followers: Array[Follower] = []
 var chain_joint: RapierPinJoint2D = null
 
 var action_vector_zero_last: bool = true
+var grounded_last: bool = true
 
 
 func _ready() -> void:
@@ -43,6 +44,7 @@ func _physics_process(_delta: float) -> void:
 	var action_vector_zero := action_vector.is_zero_approx()
 
 	var do_jump: bool = Input.is_action_just_pressed(&"p1_jump")
+	var do_recall: bool = Input.is_action_pressed(&"p1_recall")
 	var start_recall: bool = Input.is_action_just_pressed(&"p1_recall")
 
 	var do_action_mouse: bool = Input.is_action_just_pressed(&"p1_action_mouse")
@@ -52,11 +54,13 @@ func _physics_process(_delta: float) -> void:
 	var stop_action_button: bool = Input.is_action_just_released(&"p1_action_button")
 	var stop_action_vector: bool = action_vector_zero and not action_vector_zero_last
 
+	var grounded: bool = ground_test.is_colliding()
+
 	# "Pull" action
 	mass = base_mass + (added_mass * move_down * (1 if has_chain() else 0))
 
 	# Moving left/right
-	var move_power := ground_move_power if ground_test.is_colliding() else air_move_power
+	var move_power := ground_move_power if grounded else air_move_power
 	var move_sample: float
 	if move_lr > 0.0:
 		move_sample = move_power.sample(maxf(0.0, linear_velocity.x)) * move_lr
@@ -68,8 +72,20 @@ func _physics_process(_delta: float) -> void:
 		move_sample = minf(0.0, move_sample)
 	apply_central_force(Vector2(move_sample * move_multiplier * mass, 0.0))
 
+	if grounded:
+		if is_zero_approx(move_sample * move_multiplier):
+			sprite.play(&"idle")
+		else:
+			sprite.play(&"run")
+
+	if not grounded and has_chain():
+		if is_zero_approx(move_down):
+			sprite.play(&"hang")
+		else:
+			sprite.play(&"pull")
+
 	# Jump
-	if do_jump and ground_test.is_colliding():
+	if do_jump and grounded:
 		# Uncomment for funny
 		#var power := jump_power
 		#var collision = ground_test.get_collider(0)
@@ -78,6 +94,10 @@ func _physics_process(_delta: float) -> void:
 		#	collision.apply_impulse(Vector2(0.0, power / 10), ground_test.get_collision_point(0))
 		#apply_impulse(Vector2(0.0, -power))
 		apply_impulse(Vector2(0.0, -jump_power * mass))
+		sprite.play(&"jump")
+
+	if grounded and not grounded_last:
+		sprite.play(&"land")
 
 	# Throw chain
 	if do_action_mouse:
@@ -97,8 +117,12 @@ func _physics_process(_delta: float) -> void:
 		for body in colliding:
 			_on_body_entered(body)
 
+	if do_recall:
+		sprite.play(&"parry")
+
 	# Finalize
 	action_vector_zero_last = action_vector_zero
+	grounded_last = grounded
 
 
 func _on_body_entered(body: Node) -> void:
@@ -126,6 +150,7 @@ func spawn_chain(at_rotation: float) -> void:
 		chain.rotation = at_rotation
 		get_parent().add_child(chain)
 		chain_joint = chain.build_chain(num_links, self)
+		sprite.play(&"throw")
 
 
 func release_chain() -> void:
