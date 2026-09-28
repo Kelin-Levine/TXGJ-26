@@ -12,7 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://cdff2blxoxw1u" path="res://Art Assets/Quit.png" id="9_dchhv"]
 [ext_resource type="Texture2D" uid="uid://e3kfjgdh8b38" path="res://Art Assets/QuitPress.png" id="10_8cce5"]
 
-[node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("button")]
+[node name="Title" type="Control" unique_id=1364772156 node_paths=PackedStringArray("buttonPlay")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_3b4vc")
-button = NodePath("AspectRatioContainer/VBoxContainer/HBoxContainer/TitleButtonPlay")
+buttonPlay = NodePath("AspectRatioContainer/VBoxContainer/HBoxContainer/TitleButtonPlay")
 
 [node name="Background" type="Sprite2D" parent="." unique_id=1478029028]
 z_index = -1
