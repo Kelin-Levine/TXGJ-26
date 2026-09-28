@@ -1,15 +1,18 @@
 [gd_scene format=3 uid="uid://3r4t4slh30dk"]
 
+[ext_resource type="Texture2D" uid="uid://bmikb1elnhawv" path="res://Art Assets/TerminalUnlit.png" id="2_aig0n"]
 [ext_resource type="Script" uid="uid://qjwsjox3sds3" path="res://terminal/terminalSignal.gd" id="2_cgvah"]
-[ext_resource type="Texture2D" uid="uid://bv4n0veyio1ai" path="res://the-guys/green neil.png" id="2_osw5p"]
-[ext_resource type="Texture2D" uid="uid://ddcrtdxs1udp" path="res://the-guys/humans/red jimmy.png" id="3_sd0vt"]
+[ext_resource type="Texture2D" uid="uid://b3af547jst5p7" path="res://Art Assets/TerminalLit.png" id="3_ccini"]
+[ext_resource type="Texture2D" uid="uid://bnn17u3hi27jc" path="res://isotope/tempArrow.png" id="4_7va2f"]
+[ext_resource type="Texture2D" uid="uid://c2xfrut0yjjnc" path="res://Art Assets/TerminalBright.png" id="4_77c2j"]
 [ext_resource type="FontFile" uid="uid://byoarw1rnd4cr" path="res://addons/fonts/Iceland/Iceland-Regular.ttf" id="4_sd0vt"]
+[ext_resource type="Script" uid="uid://bf6xvdv1hsss" path="res://isotope/isotope_arrow.gd" id="5_aig0n"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ivqea"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("3_sd0vt")
+"texture": ExtResource("2_aig0n")
 }],
 "loop": 1,
 "name": &"off",
@@ -17,11 +20,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_osw5p")
+"texture": ExtResource("3_ccini")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_77c2j")
 }],
 "loop": 1,
 "name": &"on",
-"speed": 5.0
+"speed": 15.0
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_33212"]
@@ -42,8 +48,18 @@ uv = PackedVector2Array(-456, -72, -456, -16, -392, -16, -392, -72)
 [node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=132968596]
 z_index = -1
 position = Vector2(0, -32)
+scale = Vector2(0.135, 0.135)
 sprite_frames = SubResource("SpriteFrames_ivqea")
 animation = &"off"
+frame_progress = 0.40397236
+
+[node name="IsotopeArrow" type="Sprite2D" parent="Sprite" unique_id=917007989]
+z_index = 100
+position = Vector2(0, 32)
+scale = Vector2(5.015, 5.015)
+texture = ExtResource("4_7va2f")
+script = ExtResource("5_aig0n")
+metadata/_custom_type_script = "uid://bf6xvdv1hsss"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=971236921]
 position = Vector2(0, -39)

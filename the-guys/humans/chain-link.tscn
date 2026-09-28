@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://deech6nqsx2xg"]
 
 [ext_resource type="Script" uid="uid://bup2wqgjgeyes" path="res://the-guys/humans/chain-link.gd" id="1_45d4k"]
-[ext_resource type="Texture2D" uid="uid://ddcrtdxs1udp" path="res://the-guys/humans/red jimmy.png" id="2_cx61m"]
+[ext_resource type="Texture2D" uid="uid://yqk6ujs70lel" path="res://Art Assets/ScientistChain.png" id="2_45d4k"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yrwea"]
 radius = 12.0
@@ -26,8 +26,8 @@ shape = SubResource("CapsuleShape2D_yrwea")
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1612099943]
 texture_filter = 1
 rotation = 1.5707964
-scale = Vector2(0.75, 0.75)
-texture = ExtResource("2_cx61m")
+scale = Vector2(0.055, 0.055)
+texture = ExtResource("2_45d4k")
 
 [node name="StickTest" type="ShapeCast2D" parent="." unique_id=1230199924]
 position = Vector2(12, 0)

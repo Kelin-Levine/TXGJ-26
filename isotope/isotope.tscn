@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://whrjm4vcpxg1"]
 
 [ext_resource type="Script" uid="uid://dqgavvvpylnqh" path="res://isotope/isotope.gd" id="1_2f6fj"]
-[ext_resource type="Texture2D" uid="uid://cac3ywfw4i1ka" path="res://isotope/tempIsotope.png" id="1_8o56m"]
 [ext_resource type="Script" uid="uid://bf6xvdv1hsss" path="res://isotope/isotope_arrow.gd" id="1_tlbjn"]
 [ext_resource type="Texture2D" uid="uid://bnn17u3hi27jc" path="res://isotope/tempArrow.png" id="2_2f6fj"]
+[ext_resource type="Texture2D" uid="uid://bi6vd8bjmuawm" path="res://Art Assets/Isotope.png" id="2_t3qm6"]
 [ext_resource type="Texture2D" uid="uid://gg6km8fa77wb" path="res://icon.svg" id="5_t3qm6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ivqea"]
@@ -36,9 +36,13 @@ uv = PackedVector2Array(-42.285583, -48.28571, -1.1427612, -3.1428528, -45.71417
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1732996897]
 z_index = 4096
-texture = ExtResource("1_8o56m")
+position = Vector2(-2, 4)
+scale = Vector2(0.27, 0.27)
+texture = ExtResource("2_t3qm6")
 
 [node name="IsotopeArrow" type="Sprite2D" parent="Sprite2D" unique_id=1092718032]
+z_index = 100
+scale = Vector2(5.935, 5.935)
 texture = ExtResource("2_2f6fj")
 script = ExtResource("1_tlbjn")
 metadata/_custom_type_script = "uid://bf6xvdv1hsss"

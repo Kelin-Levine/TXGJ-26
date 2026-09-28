@@ -4,6 +4,7 @@ extends RapierArea2D
 @export var initially_active: bool = false
 var isActive: bool
 @onready var sprite: AnimatedSprite2D = $Sprite
+@onready var sprite_arrow: IsotopeArrow = $Sprite/IsotopeArrow
 @onready var label: Label = $Label
 @onready var label_timer: Timer = $LabelTimer
 
@@ -33,7 +34,9 @@ func hide_label():
 func activate_terminal():
 	isActive = true
 	sprite.play(&"on")
+	sprite_arrow.self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 
 func deactivate_terminal():
 	isActive = false
 	sprite.play(&"off")
+	sprite_arrow.self_modulate = Color(1.0, 1.0, 1.0, 0.0)

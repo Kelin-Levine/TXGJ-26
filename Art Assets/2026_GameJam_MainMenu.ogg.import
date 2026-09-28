@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://dk08nspyw0g8c"
+path="res://.godot/imported/2026_GameJam_MainMenu.ogg-c2307e02527fb98239877bcdb9c31844.oggvorbisstr"
+
+[deps]
+
+source_file="res://Art Assets/2026_GameJam_MainMenu.ogg"
+dest_files=["res://.godot/imported/2026_GameJam_MainMenu.ogg-c2307e02527fb98239877bcdb9c31844.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

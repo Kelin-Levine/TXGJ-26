@@ -12,7 +12,7 @@ extends RapierRigidBody2D
 @export var follower_scene: PackedScene
 @export var chain_scene: PackedScene
 
-@onready var sprite: Sprite2D = $Sprite2D
+@onready var sprite: AnimatedSprite2D = $Sprite
 @onready var ground_test: ShapeCast2D = $GroundTest
 @onready var wall_test_l: ShapeCast2D = $WallTestL
 @onready var wall_test_r: ShapeCast2D = $WallTestR

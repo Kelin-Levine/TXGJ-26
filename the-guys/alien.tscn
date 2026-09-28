@@ -1,9 +1,28 @@
 [gd_scene format=3 uid="uid://bfpcpp8ysqflb"]
 
 [ext_resource type="Script" uid="uid://8j0wjs3glr3a" path="res://the-guys/alien.gd" id="1_4fn6d"]
-[ext_resource type="Texture2D" uid="uid://bv4n0veyio1ai" path="res://the-guys/green neil.png" id="1_lwe2y"]
 [ext_resource type="PackedScene" uid="uid://bxlwucsnkr3wo" path="res://the-guys/humans/follower.tscn" id="2_enn2l"]
 [ext_resource type="PackedScene" uid="uid://b3u64j5n081ax" path="res://the-guys/humans/chain.tscn" id="2_s5vku"]
+[ext_resource type="Texture2D" uid="uid://1fu8kjnc7gpl" path="res://Art Assets/GREENNEIL-fall-1.png" id="4_ma6r3"]
+[ext_resource type="Texture2D" uid="uid://dwf18rrfqv0m4" path="res://Art Assets/GREENNEIL-fall-2.png" id="5_1qlhr"]
+[ext_resource type="Texture2D" uid="uid://ow1v343csxd8" path="res://Art Assets/GREENNEIL-hang.png" id="6_apdsv"]
+[ext_resource type="Texture2D" uid="uid://dhbscfohuaeti" path="res://Art Assets/GREENNEIL-idle-1.png" id="7_5qjre"]
+[ext_resource type="Texture2D" uid="uid://dxlyyi0dttvk0" path="res://Art Assets/GREENNEIL-idle-2.png" id="8_slsrx"]
+[ext_resource type="Texture2D" uid="uid://ci3qkkv6l7k4e" path="res://Art Assets/GREENNEIL-idle-3.png" id="9_ynnyl"]
+[ext_resource type="Texture2D" uid="uid://m4r88yaq2upk" path="res://Art Assets/GREENNEIL-idle-4.png" id="10_vrm33"]
+[ext_resource type="Texture2D" uid="uid://ddso857y4qdag" path="res://Art Assets/GREENNEIL-jump-1.png" id="11_yliro"]
+[ext_resource type="Texture2D" uid="uid://k66ibjeu6goc" path="res://Art Assets/GREENNEIL-jump-2.png" id="12_ddrtd"]
+[ext_resource type="Texture2D" uid="uid://ccpv6nvnjqip6" path="res://Art Assets/GREENNEIL-jump-3.png" id="13_1hlo4"]
+[ext_resource type="Texture2D" uid="uid://coev57fv34dpf" path="res://Art Assets/GREENNEIL-landing-1.png" id="14_atpa5"]
+[ext_resource type="Texture2D" uid="uid://c3mwm1i4mmpbv" path="res://Art Assets/GREENNEIL-landing-2.png" id="15_875ia"]
+[ext_resource type="Texture2D" uid="uid://80i6kexealy4" path="res://Art Assets/GREENNEIL-landing-3.png" id="16_hcunq"]
+[ext_resource type="Texture2D" uid="uid://bmusrr8tamipj" path="res://Art Assets/GREENNEIL-parry.png" id="17_8u4x7"]
+[ext_resource type="Texture2D" uid="uid://y5jgqj6iv016" path="res://Art Assets/GREENNEIL-pull.png" id="18_ushns"]
+[ext_resource type="Texture2D" uid="uid://cbqv147nu07vw" path="res://Art Assets/GREENNEIL-run-1.png" id="19_n7p1h"]
+[ext_resource type="Texture2D" uid="uid://dyehbxmvk4yql" path="res://Art Assets/GREENNEIL-run-2.png" id="20_1t2il"]
+[ext_resource type="Texture2D" uid="uid://daw222axfk1eg" path="res://Art Assets/GREENNEIL-run-3.png" id="21_1ob1n"]
+[ext_resource type="Texture2D" uid="uid://bmkah5xoregj0" path="res://Art Assets/GREENNEIL-run-4.png" id="22_cfxeg"]
+[ext_resource type="Texture2D" uid="uid://dqrqyvpkukovv" path="res://Art Assets/GREENNEIL-throw.png" id="23_3nwqi"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_4fn6d"]
 
@@ -19,6 +38,114 @@ point_count = 2
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ivqea"]
 size = Vector2(30, 62)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ivqea"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_ma6r3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1qlhr")
+}],
+"loop": 1,
+"name": &"fall",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_apdsv")
+}],
+"loop": 1,
+"name": &"hang",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_5qjre")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_slsrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ynnyl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_vrm33")
+}],
+"loop": 1,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_yliro")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_ddrtd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_1hlo4")
+}],
+"loop": 0,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_atpa5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_875ia")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_hcunq")
+}],
+"loop": 1,
+"name": &"land",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("17_8u4x7")
+}],
+"loop": 1,
+"name": &"parry",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_ushns")
+}],
+"loop": 1,
+"name": &"pull",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("19_n7p1h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_1t2il")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_1ob1n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_cfxeg")
+}],
+"loop": 1,
+"name": &"run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("23_3nwqi")
+}],
+"loop": 1,
+"name": &"throw",
+"speed": 5.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yrwea"]
 size = Vector2(24, 6)
@@ -48,9 +175,11 @@ metadata/_custom_type_script = "uid://8j0wjs3glr3a"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1442710145]
 shape = SubResource("RectangleShape2D_ivqea")
 
-[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1057737969]
+[node name="Sprite" type="AnimatedSprite2D" parent="." unique_id=1158698356]
 texture_filter = 1
-texture = ExtResource("1_lwe2y")
+scale = Vector2(0.095, 0.095)
+sprite_frames = SubResource("SpriteFrames_ivqea")
+animation = &"idle"
 
 [node name="GroundTest" type="ShapeCast2D" parent="." unique_id=1501266122]
 position = Vector2(0, 34)

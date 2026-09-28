@@ -12,11 +12,25 @@
 [ext_resource type="PackedScene" uid="uid://cx1kmdxbxqx08" path="res://stage/wall.tscn" id="6_u7g2e"]
 [ext_resource type="Script" uid="uid://6e7rdacqmmvd" path="res://isotope/isotope-ceiling.gd" id="9_xcdwj"]
 [ext_resource type="PackedScene" uid="uid://3r4t4slh30dk" path="res://terminal/terminal.tscn" id="11_eefs8"]
+[ext_resource type="Script" uid="uid://dfygfa8fwh300" path="res://util/sync-cam.gd" id="13_2c823"]
+[ext_resource type="PackedScene" uid="uid://dspgc3gxjlirc" path="res://Art Assets/GameJamBGExport.obj" id="13_56s0g"]
+[ext_resource type="Script" uid="uid://d7d61qsfjt5t" path="res://util/glowing-light.gd" id="14_tcqas"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_ivqea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 size = Vector2(128, 80)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_56s0g"]
+sky_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+ground_horizon_color = Color(0.66224277, 0.6717428, 0.6867428, 1)
+
+[sub_resource type="Sky" id="Sky_tcqas"]
+sky_material = SubResource("ProceduralSkyMaterial_56s0g")
+
+[sub_resource type="Environment" id="Environment_2c823"]
+background_mode = 1
+sky = SubResource("Sky_tcqas")
 
 [node name="Stage" type="Node" unique_id=1262384612]
 
@@ -93,6 +107,7 @@ shape = SubResource("WorldBoundaryShape2D_ivqea")
 
 [node name="Polygon2D" type="Polygon2D" parent="Bounding Walls/Ground" unique_id=1888199309]
 scale = Vector2(25, 23.448)
+color = Color(0.7800605, 0.6857894, 0, 1)
 polygon = PackedVector2Array(-280.0001, -5.722046e-06, 279.99985, -5.722046e-06, 279.99985, 87.999985, -280.0001, 87.999985)
 uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 119.999985, -208.00006, 119.999985)
 
@@ -108,6 +123,7 @@ shape = SubResource("WorldBoundaryShape2D_ivqea")
 
 [node name="Polygon2D" type="Polygon2D" parent="Bounding Walls/Ceiling" unique_id=104625473]
 scale = Vector2(25, 23.448)
+color = Color(0.4392157, 0.46666667, 0.5019608, 1)
 polygon = PackedVector2Array(-280.0001, -5.722046e-06, 279.99985, -5.722046e-06, 279.99985, 87.999985, -280.0001, 87.999985)
 uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 119.999985, -208.00006, 119.999985)
 
@@ -121,6 +137,7 @@ shape = SubResource("WorldBoundaryShape2D_ivqea")
 
 [node name="Polygon2D" type="Polygon2D" parent="Bounding Walls/WallLeft" unique_id=1577276103]
 scale = Vector2(25, 23.448)
+color = Color(0.4392157, 0.46666667, 0.5019608, 1)
 polygon = PackedVector2Array(-280.0001, -5.722046e-06, 279.99985, -5.722046e-06, 279.99985, 87.999985, -280.0001, 87.999985)
 uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 119.999985, -208.00006, 119.999985)
 
@@ -134,6 +151,7 @@ shape = SubResource("WorldBoundaryShape2D_ivqea")
 
 [node name="Polygon2D" type="Polygon2D" parent="Bounding Walls/WallRight" unique_id=540516502]
 scale = Vector2(25, 23.448)
+color = Color(0.4392157, 0.46666667, 0.5019608, 1)
 polygon = PackedVector2Array(-280.0001, -5.722046e-06, 279.99985, -5.722046e-06, 279.99985, 87.999985, -280.0001, 87.999985)
 uv = PackedVector2Array(-208.00006, 31.999998, 351.99988, 31.999998, 351.99988, 119.999985, -208.00006, 119.999985)
 
@@ -514,3 +532,60 @@ position = Vector2(1800, -980)
 
 [node name="Terminal11" parent="Terminals" unique_id=1315084933 instance=ExtResource("11_eefs8")]
 position = Vector2(2600, 480)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1626037641]
+environment = SubResource("Environment_2c823")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=1705839362 node_paths=PackedStringArray("based_on")]
+current = true
+fov = 43.0
+script = ExtResource("13_2c823")
+based_on = NodePath("../Camera2D")
+metadata/_custom_type_script = "uid://dfygfa8fwh300"
+
+[node name="GameJamBGExport" parent="." unique_id=1550247469 instance=ExtResource("13_56s0g")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -25.774, -135.199)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="GameJamBGExport" unique_id=1259832494]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.653616, 30.49736, 17.287346)
+light_color = Color(0.3372549, 0.27450982, 0.5647059, 1)
+omni_range = 4096.0
+omni_attenuation = -0.1
+script = ExtResource("14_tcqas")
+max_atten = 0.5
+min_atten = -0.1
+rate = 0.25
+metadata/_custom_type_script = "uid://d7d61qsfjt5t"
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="GameJamBGExport" unique_id=237405230]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9345818, 30.49736, 16.610222)
+light_color = Color(0.3372549, 0.27450982, 0.5647059, 1)
+omni_range = 4096.0
+omni_attenuation = -0.1
+script = ExtResource("14_tcqas")
+max_atten = 0.5
+min_atten = -0.1
+rate = 0.25
+metadata/_custom_type_script = "uid://d7d61qsfjt5t"
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="GameJamBGExport" unique_id=713591953]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.653616, 30.49736, 0.9653015)
+light_color = Color(0.3372549, 0.27450982, 0.5647059, 1)
+omni_range = 4096.0
+omni_attenuation = -0.1
+script = ExtResource("14_tcqas")
+max_atten = 0.5
+min_atten = -0.1
+rate = 0.25
+metadata/_custom_type_script = "uid://d7d61qsfjt5t"
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="GameJamBGExport" unique_id=1038586843]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.9345818, 30.49736, 0.2881775)
+light_color = Color(0.3372549, 0.27450982, 0.5647059, 1)
+omni_range = 4096.0
+omni_attenuation = -0.1
+script = ExtResource("14_tcqas")
+max_atten = 0.5
+min_atten = -0.1
+rate = 0.25
+metadata/_custom_type_script = "uid://d7d61qsfjt5t"

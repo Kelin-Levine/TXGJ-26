@@ -16,6 +16,7 @@ extends Sprite2D
 func _ready() -> void:
     if original != null:
         global_transform = Transform2D(original.global_transform)
+        global_scale = Vector2.ONE * 0.08
 
 
 func _process(delta: float) -> void:
@@ -23,7 +24,7 @@ func _process(delta: float) -> void:
     flip_h = alien.global_position.x - global_position.x < 0.0
     global_position = _delta_interp(global_position, chase_target, delta, chase_rate)
     rotation = _delta_interp(rotation, 0.0, delta, rotation_correction_rate)
-    scale = _delta_interp(scale, Vector2.ONE * 0.75, delta, scale_correction_rate)
+    scale = _delta_interp(scale, Vector2.ONE * 0.07, delta, scale_correction_rate)
     skew = _delta_interp(skew, 0.0, delta, skew_correction_rate)
 
 

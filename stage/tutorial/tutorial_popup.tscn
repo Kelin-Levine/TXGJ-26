@@ -66,6 +66,7 @@ Left Click to let go.
 horizontal_alignment = 1
 
 [node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1833363606]
+visible = false
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3aw6r")
 theme_override_font_sizes/font_size = 24
@@ -105,10 +106,9 @@ text = "
 
 
 
-Keep the unstable isotope (red(?)
- arrow) in the air by hitting it with 
-yourself or your chains. If it touches
- the bottom of the lab, everyone dies!
+Keep the unstable isotope in the air
+by hitting it with  yourself or your chains.
+If it touches the bottom of the lab, everyone dies!
 "
 horizontal_alignment = 1
 
@@ -151,8 +151,7 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("2_3aw6r")
 theme_override_font_sizes/font_size = 24
 text = "Activate computer terminals 
-(blue(?) arrows) for points and 
-upgrades! Get as many points 
-as you can!
+for points and upgrades!
+Get as many points as you can!
 "
 horizontal_alignment = 1
